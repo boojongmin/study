@@ -1,5 +1,34 @@
+# Compiled Ojbet files
+*.slo
+*.lo
+*.o
+*.obj
 *.class
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
 *.log
+
+# ignore folder
+tmp/
+bin/
+bin-debug/
+
+.settings/
 
 # sbt specific
 .cache
@@ -15,3 +44,4 @@ project/plugins/project/
 # Scala-IDE specific
 .scala_dependencies
 .worksheet
+
