@@ -1,5 +1,6 @@
-# studa
-branch feature-A
--fix-B
--feature-C
+# study c++
+
+1.뇌를자극하는 c++ 
+
+
 
