@@ -1,0 +1,82 @@
+#include <iostream>
+using namespace std;
+
+class Point {
+public:
+  int x, y;
+
+  Point();
+  Point(int x, int y);
+  Point(const Point& pt);
+
+  ~Point();
+
+  void Print();
+
+};
+
+//define constructor
+Point::Point(){ x=0, y=0; }
+Point::Point(int x, int y){ this->x = x, this->y = y;}
+//define destructor
+Point::~Point(){
+	cout << "u ak\n";
+}
+
+
+//copy constructor
+Point::Point(const Point& pt){
+	cout << "copy constructor\n";
+	x = pt.x;
+	y = pt.y;
+}
+
+void Point::Print(){
+	cout << "{ x: " << x << ", y: " << y  << "}\n";
+}
+
+void Area(const Point& pt){
+	cout << "Area : " << pt.x * pt.y << "\n";
+}
+
+int main(){
+	Point pt1, pt2, pt3;
+
+	pt1.x = 100;
+
+	cout << &pt1 << "\n";
+	cout << pt1.x << "\t" << pt1.y << "\n";
+	cout << &pt2 << "\n";
+
+	pt3 = pt1;
+
+	cout << &pt3 << "\n";
+
+	pt1.x = 5;
+	pt1.y = 200;
+	pt1.Print();
+	pt2.Print();
+	pt3.Print();
+	cout <<  pt3.x << "\n";
+
+	Point pt4(4,5);
+	pt4.Print();
+
+	Point pt5 = pt4;
+	pt5.Print();
+
+	pt5 = pt1;
+	pt5.Print(); //not working copy constructor
+
+	Area(pt5);
+
+	Point* pt6 = new Point(3,4);
+
+	delete pt6;
+	pt6 = NULL;
+
+	cout << "delete pt6";
+//	pt6->Print();
+
+	return 0;
+}
