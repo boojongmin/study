@@ -1,6 +1,7 @@
-# study c++
+# study nginx
 
-1.뇌를자극하는 c++ 
+book - Nginx HTTP Server
+
 
 
 
