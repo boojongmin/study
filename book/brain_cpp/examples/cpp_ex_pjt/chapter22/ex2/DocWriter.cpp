@@ -4,8 +4,7 @@
  *  Created on: 2015. 8. 4.
  *      Author: boojongmin
  */
-
-#include "DocWriter.h"
+#include "ExampleWriter.h"
 #include <fstream>
 using namespace std;
 

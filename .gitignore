@@ -38,6 +38,9 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
+#visual studio 2015
+Debug/
+ipch/
 
 
 

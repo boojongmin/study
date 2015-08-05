@@ -5,9 +5,10 @@
  *      Author: boojongmin
  */
 
-#include "HTMLWriter.h"
+#include "ExampleWriter.h"
 #include <iostream>
 #include <fstream>
+#include "..\..\..\..\examples_vs\examples\examples\ExampleWriter.h"
 using namespace std;
 
 HTMLWriter::HTMLWriter() {
@@ -42,14 +43,10 @@ void HTMLWriter::SetFont(const string& fontName, int fontSize, const string& fon
 }
 
 HTMLWriter::HTMLWriter(const string& fileName, const string& content)
-:DocWriter(fileName, content)
 {
+	_fileName = fileName;
+	_content = content;
 	_fontName = "굴림";
 	_fontSize = 3;
 	_fontColor = "black";
 }
-
-
-
-
-

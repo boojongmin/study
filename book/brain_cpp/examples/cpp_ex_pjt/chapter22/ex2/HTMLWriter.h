@@ -5,8 +5,8 @@
  *      Author: boojongmin
  */
 
-#ifndef CHAPTER22_EX2_HTMLWRITER_H_
-#define CHAPTER22_EX2_HTMLWRITER_H_
+#ifndef HTMLWRITER_H_
+#define HTMLWRITER_H_
 
 #include "DocWriter.h"
 
@@ -16,7 +16,7 @@ public:
 	HTMLWriter(const string& fileName, const string& content);
 	~HTMLWriter();
 
-	void Write();
+	virtual void Write();
 	void SetFont(const string& fontName, int fontSize, const string& fontColor);
 
 protected:
