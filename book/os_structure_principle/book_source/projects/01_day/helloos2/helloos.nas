@@ -38,7 +38,7 @@
 		DB		0x0a			; 개행
 		DB		0
 
-		RESB	0x1fe-$				; 0 x001fe까지를 0x00로 채우는 명령
+		RESB	0x1fe				; 0 x001fe까지를 0x00로 채우는 명령
 
 		DB		0x55, 0xaa
 
