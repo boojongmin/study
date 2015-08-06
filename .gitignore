@@ -1,5 +1,6 @@
 #binary file
 *.img
+*.bin
 
 # Compiled Ojbet files
 *.slo
@@ -25,6 +26,9 @@
 *.app
 
 *.log
+
+#vim
+*.swp
 
 # ignore folder
 tmp/
