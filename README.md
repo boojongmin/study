@@ -11,3 +11,6 @@
 설치위치 C:\Program Files\Haskell Platform\7.10.2-a\bin
 
 
+
+
+
