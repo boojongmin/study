@@ -8,3 +8,4 @@
 [메뉴얼](https://www.haskell.org/documentation)
 [하스켈 플랫폼](https://hackage.haskell.org/)
 
+
