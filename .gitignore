@@ -41,6 +41,7 @@ local.properties
 #visual studio 2015
 Debug/
 ipch/
+*.sdf
 
 
 
