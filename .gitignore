@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.pydevproject
 .metadata
 .gradle
@@ -44,6 +45,11 @@ ipch/
 
 
 
+=======
+#binary file
+*.img
+*.bin
+>>>>>>> dcfd793e15e966c6d2456b6ffe08715cbae4f42b
 
 # Compiled Ojbet files
 *.slo
@@ -70,6 +76,18 @@ ipch/
 
 *.log
 
+<<<<<<< HEAD
+=======
+#vim
+*.swp
+
+# ignore folder
+tmp/
+bin/
+bin-debug/
+
+.settings/
+>>>>>>> dcfd793e15e966c6d2456b6ffe08715cbae4f42b
 
 # sbt specific
 .cache
