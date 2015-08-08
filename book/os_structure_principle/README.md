@@ -1,3 +1,9 @@
+OS 구조와 원리 - OS 개발 30일 프로젝트
+
+nasm을 공부하려는데 예제는 nask assembly 를 사용해서 좀더 어셈블을 공부해서 익숙해진후 다시 시작하려한다.
+
+***
+
 참고링크
 [NASM설명](http://gurugio.kldp.net/wiki/wiki.php/asm_basic)
 [qemu를활용한가상화기초](http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/cloud/Qemu/Basic)
