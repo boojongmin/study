@@ -8,4 +8,6 @@
 [메뉴얼](https://www.haskell.org/documentation)
 [하스켈 플랫폼](https://hackage.haskell.org/)
 
+설치위치 C:\Program Files\Haskell Platform\7.10.2-a\bin
+
 
