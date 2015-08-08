@@ -9,6 +9,10 @@
 [하스켈 플랫폼](https://hackage.haskell.org/)  
 
 설치위치 C:\Program Files\Haskell Platform\7.10.2-a\bin
+인터렉티브 : ghci
+컴파일 : ghc
+
+
 
 
 
