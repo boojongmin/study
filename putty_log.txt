@@ -1,0 +1,344 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.10 18:13:21 =~=~=~=~=~=~=~=~=~=~=~=
+login as: boojongmin
+boojongmin@127.0.0.1's password: 
+Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.16.0-38-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+210 packages can be updated.
+121 updates are security updates.
+
+Last login: Mon Aug 10 07:55:54 2015 from localhost
+boojongmin@boojongmin-ThinkPad-E550:~$ ls
+dev                             
+examples.desktop          
+boojongmin@boojongmin-ThinkPad-E550:~$ cd dev/cm/github/study/
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ ls
+README.md  book  putty_log.txt
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ cat putty_log.txt 
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2015.08.10 18:13:21 =~=~=~=~=~=~=~=~=~=~=~=
+login as: boojongmin
+boojongmin@127.0.0.1's password: 
+Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.16.0-38-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+210 packages can be updated.
+121 updates are security updates.
+
+Last login: Mon Aug 10 07:55:54 2015 from localhost
+boojongmin@boojongmin-ThinkPad-E550:~$ ls
+dev                             
+examples.desktop          
+boojongmin@boojongmin-ThinkPad-E550:~$ cd dev/cm/github/study/
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ ls
+README.md  book  putty_log.txt
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ cat putty_log.txt 
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ qmeu
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ qemu
+'qemu'      :
+ * qemu-system-arm
+ * qemu-system-mips
+ * qemu-system-misc
+ * qemu-system-ppc
+ * qemu-system-sparc
+ * qemu-system-x86
+  : sudo apt-get install < >
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ sudo apt-get install qemu-system-x86
+[sudo] password for boojongmin: 
+   ... 0%   ... 100%   ... 
+   ... 0%    ... 0%   ... 50%   ... 50%          
+   ... 0%   ... 0%   ... 
+       :
+  account-plugin-windows-live ant ant-optional antlr aspectj bnd bsh
+  checkstyle fop groovy ivy java-wrappers junit junit4 libaether-java
+  libantlr-java libaopalliance-java libapache-pom-java libasm3-java
+  libasm4-java libaspectj-java libasync-http-client-java
+  libatinject-jsr330-api-java libavalon-framework-java libbatik-java
+  libbcel-java libbcpg-java libbcprov-java libbindex-java libbsf-java
+  libbsh-java libcdi-api-java libcglib-java libclassworlds-java
+  libcodenarc-groovy-java libcommons-beanutils-java libcommons-cli-java
+  libcommons-codec-java libcommons-collections3-java
+  libcommons-configuration-java libcommons-dbcp-java libcommons-digester-java
+  libcommons-httpclient-java libcommons-io-java libcommons-jexl2-java
+  libcommons-jxpath-java libcommons-lang-java libcommons-logging-java
+  libcommons-net2-java libcommons-parent-java libcommons-pool-java
+  libcommons-vfs-java libconstantine-java libdom4j-java libdoxia-java
+  libeasymock-java libecj-java libfop-java libganymed-ssh2-java
+  libgeronimo-interceptor-3.0-spec-java libgeronimo-jpa-2.0-spec-java
+  libgeronimo-jta-1.1-spec-java libgeronimo-osgi-support-java
+  libgmetrics-groovy-java libgnuinet-java libgnujaf-java libgnumail-java
+  libgoogle-gson-java libgradle-core-java libgradle-plugins-java libguava-java
+  libguice-java libhamcrest-java libhawtjni-runtime-java libhttpclient-java
+  libhttpcore-java libitext1-java libjackrabbit-java libjaffl-java
+  libjansi-java libjansi-native-java libjarjar-java libjaxen-java
+  libjaxp1.3-java libjcifs-java libjcip-annotations-java libjcommander-java
+  libjdom1-java libjetty-extra libjetty-extra-java libjetty-java libjffi-java
+  libjffi-jni libjline-java libjna-java libjnr-posix-java libjnr-x86asm-java
+  libjsch-java libjsoup-java libjsr305-java libkryo-java liblog4j1.2-java
+  liblogback-java libmaven-ant-tasks-java libmaven-parent-java
+  libmaven-scm-java libmaven2-core-java libminlog-java libmockobjects-java
+  libmodello-java libmx4j-java libnative-platform-java libnative-platform-jni
+  libnekohtml-java libnetbeans-cvsclient-java libnetty-java libobjenesis-java
+  libosgi-compendium-java libosgi-core-java libosgi-foundation-ee-java
+  libplexus-ant-factory-java libplexus-archiver-java
+  libplexus-bsh-factory-java libplexus-build-api-java libplexus-cipher-java
+  libplexus-classworlds-java libplexus-classworlds2-java libplexus-cli-java
+  libplexus-container-default-java libplexus-containers-java
+  libplexus-containers1.5-java libplexus-i18n-java
+  libplexus-interactivity-api-java libplexus-interpolation-java
+  libplexus-io-java libplexus-sec-dispatcher-java libplexus-utils-java
+  libplexus-utils2-java libpolyglot-maven-java libqdox-java libreflectasm-java
+  libregexp-java librhino-java libsaxon-java libservlet2.5-java
+  libservlet3.0-java libsisu-guice-java libsisu-ioc-java libslf4j-java
+  libtomcat7-java libupstart1 libwagon-java libwagon2-java libxalan2-java
+  libxbean-java libxerces2-java libxml-commons-external-java
+  libxml-commons-resolver1.1-java libxmlgraphics-commons-java libxom-java
+  libxpp2-java libxpp3-java libxstream-java libyaml-snake-java maven rhino
+  testng
+Use 'apt-get autoremove' to remove them.
+    :
+  cpu-checker ipxe-qemu libaio1 libboost-thread1.54.0 libfdt1 librados2
+  librbd1 libsdl1.2debian libseccomp2 libspice-server1 libusbredirparser1
+  libxen-4.4 libxenstore3.0 msr-tools qemu-keymaps qemu-system-common
+  qemu-utils seabios sharutils
+ :
+  samba vde2 sgabios kvm-ipxe-precise debootstrap bsd-mailx mailx
+    :
+  cpu-checker ipxe-qemu libaio1 libboost-thread1.54.0 libfdt1 librados2
+  librbd1 libsdl1.2debian libseccomp2 libspice-server1 libusbredirparser1
+  libxen-4.4 libxenstore3.0 msr-tools qemu-keymaps qemu-system-common
+  qemu-system-x86 qemu-utils seabios sharutils
+0 , 20  , 0   217   .
+5,935 k   .
+   29.2 M     .
+ ? [Y/n] Y
+0% []              :1 http://kr.archive.ubuntu.com/ubuntu/ trusty/main libaio1 amd64 0.3.109-4 [6,364 B]
+              0% [1 libaio1 4,109 B/6,364 B 65%]                                  0% []              :2 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main libboost-thread1.54.0 amd64 1.54.0-4ubuntu3.1 [26.5 kB]
+              0% [2 libboost-thread1.54.0 4,108 B/26.5 kB 15%]                                                1% []              :3 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main librados2 amd64 0.80.9-0ubuntu0.14.04.2 [1,429 kB]
+              1% [3 librados2 4,106 B/1,429 kB 0%]                                    10% [3 librados2 560 kB/1,429 kB 39%]                                     23% [3 librados2 1,304 kB/1,429 kB 91%]                                       25% []               :4 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main librbd1 amd64 0.80.9-0ubuntu0.14.04.2 [319 kB]
+               25% [4 librbd1 2,659 B/319 kB 1%]                                 30% []               :5 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main libsdl1.2debian amd64 1.2.15-8ubuntu1.1 [162 kB]
+               30% [5 libsdl1.2debian 2,641 B/162 kB 2%]                                         33% []               :6 http://kr.archive.ubuntu.com/ubuntu/ trusty/main libseccomp2 amd64 2.1.0+dfsg-1 [34.8 kB]
+               33% [6 libseccomp2 4,108 B/34.8 kB 12%]                                       33% []               :7 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main libspice-server1 amd64 0.12.4-0nocelt2ubuntu1 [321 kB]
+               33% [7 libspice-server1 5,555 B/321 kB 2%]                                          39% []               :8 http://kr.archive.ubuntu.com/ubuntu/ trusty/main libusbredirparser1 amd64 0.6-2ubuntu1 [13.2 kB]
+               39% [8 libusbredirparser1 5,556 B/13.2 kB 42%]                                              39% []               :9 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-system-common amd64 2.0.0+dfsg-2ubuntu1.15 [157 kB]
+               39% [9 qemu-system-common 1,212 B/157 kB 1%]                                            42% []               :10 http://kr.archive.ubuntu.com/ubuntu/ trusty/main libfdt1 amd64 1.4.0+dfsg-1 [15.7 kB]
+               42% [10 libfdt1 1,194 B/15.7 kB 8%]                                   42% []               :11 http://kr.archive.ubuntu.com/ubuntu/ trusty/main msr-tools amd64 1.3-2 [10.6 kB]
+               42% [11 msr-tools 4,108 B/10.6 kB 39%]                                      42% []               :12 http://kr.archive.ubuntu.com/ubuntu/ trusty/main cpu-checker amd64 0.7-0ubuntu4 [6,834 B]
+               42% [12 cpu-checker 6,834 B/6,834 B 100%]                                         42% []               :13 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main ipxe-qemu all 1.0.0+git-20131111.c3d1e78-2ubuntu1.1 [510 kB]
+               42% [13 ipxe-qemu 1,211 B/510 kB 0%]                                    51% []               :14 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main libxenstore3.0 amd64 4.4.1-0ubuntu0.14.04.6 [18.7 kB]
+               51% [14 libxenstore3.0 1,212 B/18.7 kB 6%]                                          51% []               :15 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main libxen-4.4 amd64 4.4.1-0ubuntu0.14.04.6 [273 kB]
+               51% [15 libxen-4.4 2,640 B/273 kB 1%]                                     56% []               :16 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-keymaps all 2.0.0+dfsg-2ubuntu1.15 [20.2 kB]
+               56% [16 qemu-keymaps 4,108 B/20.2 kB 20%]                                         56% []               :17 http://kr.archive.ubuntu.com/ubuntu/ trusty/main seabios all 1.7.4-4 [108 kB]
+               56% [17 seabios 1,211 B/108 kB 1%]                                  58% []               :18 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-system-x86 amd64 2.0.0+dfsg-2ubuntu1.15 [1,946 kB]
+               58% [18 qemu-system-x86 2,388 B/1,946 kB 0%]69% [18 qemu-system-x86 686 kB/1,946 kB 35%]                                            83% [18 qemu-system-x86 1,494 kB/1,946 kB 77%]                                              91% []               :19 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-utils amd64 2.0.0+dfsg-2ubuntu1.15 [413 kB]
+               91% [19 qemu-utils 5,556 B/413 kB 1%]                                     98% []               :20 http://kr.archive.ubuntu.com/ubuntu/ trusty/main sharutils amd64 1:4.14-1ubuntu1 [145 kB]
+               98% [20 sharutils 1,772 B/145 kB 1%]                                    100% []                 5,935 k,  5 (1,051 k/)
+Selecting previously unselected package libaio1:amd64.
+(  ...(  ...5%(  ...10%(  ...15%(  ...20%(  ...25%(  ...30%(  ...35%(  ...40%(  ...45%(  ...50%(  ...55%(  ...60%(  ...65%(  ...70%(  ...75%(  ...80%(  ...85%(  ...90%(  ...95%(  ...100%(  ... 217151    .)
+Preparing to unpack .../libaio1_0.3.109-4_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.109-4) ...
+Selecting previously unselected package libboost-thread1.54.0:amd64.
+Preparing to unpack .../libboost-thread1.54.0_1.54.0-4ubuntu3.1_amd64.deb ...
+Unpacking libboost-thread1.54.0:amd64 (1.54.0-4ubuntu3.1) ...
+Selecting previously unselected package librados2.
+Preparing to unpack .../librados2_0.80.9-0ubuntu0.14.04.2_amd64.deb ...
+Unpacking librados2 (0.80.9-0ubuntu0.14.04.2) ...
+Selecting previously unselected package librbd1.
+Preparing to unpack .../librbd1_0.80.9-0ubuntu0.14.04.2_amd64.deb ...
+Unpacking librbd1 (0.80.9-0ubuntu0.14.04.2) ...
+Selecting previously unselected package libsdl1.2debian:amd64.
+Preparing to unpack .../libsdl1.2debian_1.2.15-8ubuntu1.1_amd64.deb ...
+Unpacking libsdl1.2debian:amd64 (1.2.15-8ubuntu1.1) ...
+Selecting previously unselected package libseccomp2:amd64.
+Preparing to unpack .../libseccomp2_2.1.0+dfsg-1_amd64.deb ...
+Unpacking libseccomp2:amd64 (2.1.0+dfsg-1) ...
+Selecting previously unselected package libspice-server1:amd64.
+Preparing to unpack .../libspice-server1_0.12.4-0nocelt2ubuntu1_amd64.deb ...
+Unpacking libspice-server1:amd64 (0.12.4-0nocelt2ubuntu1) ...
+Selecting previously unselected package libusbredirparser1:amd64.
+Preparing to unpack .../libusbredirparser1_0.6-2ubuntu1_amd64.deb ...
+Unpacking libusbredirparser1:amd64 (0.6-2ubuntu1) ...
+Selecting previously unselected package qemu-system-common.
+Preparing to unpack .../qemu-system-common_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-system-common (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package libfdt1:amd64.
+Preparing to unpack .../libfdt1_1.4.0+dfsg-1_amd64.deb ...
+Unpacking libfdt1:amd64 (1.4.0+dfsg-1) ...
+Selecting previously unselected package msr-tools.
+Preparing to unpack .../msr-tools_1.3-2_amd64.deb ...
+Unpacking msr-tools (1.3-2) ...
+Selecting previously unselected package cpu-checker.
+Preparing to unpack .../cpu-checker_0.7-0ubuntu4_amd64.deb ...
+Unpacking cpu-checker (0.7-0ubuntu4) ...
+Selecting previously unselected package ipxe-qemu.
+Preparing to unpack .../ipxe-qemu_1.0.0+git-20131111.c3d1e78-2ubuntu1.1_all.deb ...
+Unpacking ipxe-qemu (1.0.0+git-20131111.c3d1e78-2ubuntu1.1) ...
+Selecting previously unselected package libxenstore3.0.
+Preparing to unpack .../libxenstore3.0_4.4.1-0ubuntu0.14.04.6_amd64.deb ...
+Unpacking libxenstore3.0 (4.4.1-0ubuntu0.14.04.6) ...
+Selecting previously unselected package libxen-4.4.
+Preparing to unpack .../libxen-4.4_4.4.1-0ubuntu0.14.04.6_amd64.deb ...
+Unpacking libxen-4.4 (4.4.1-0ubuntu0.14.04.6) ...
+Selecting previously unselected package qemu-keymaps.
+Preparing to unpack .../qemu-keymaps_2.0.0+dfsg-2ubuntu1.15_all.deb ...
+Unpacking qemu-keymaps (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package seabios.
+Preparing to unpack .../seabios_1.7.4-4_all.deb ...
+Unpacking seabios (1.7.4-4) ...
+Selecting previously unselected package qemu-system-x86.
+Preparing to unpack .../qemu-system-x86_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-system-x86 (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package qemu-utils.
+Preparing to unpack .../qemu-utils_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-utils (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package sharutils.
+Preparing to unpack .../sharutils_1%3a4.14-1ubuntu1_amd64.deb ...
+Unpacking sharutils (1:4.14-1ubuntu1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+ureadahead will be reprofiled on next reboot
+Processing triggers for install-info (5.2.0.dfsg.1-2) ...
+libaio1:amd64 (0.3.109-4)   ...
+libboost-thread1.54.0:amd64 (1.54.0-4ubuntu3.1)   ...
+librados2 (0.80.9-0ubuntu0.14.04.2)   ...
+librbd1 (0.80.9-0ubuntu0.14.04.2)   ...
+libsdl1.2debian:amd64 (1.2.15-8ubuntu1.1)   ...
+libseccomp2:amd64 (2.1.0+dfsg-1)   ...
+libspice-server1:amd64 (0.12.4-0nocelt2ubuntu1)   ...
+libusbredirparser1:amd64 (0.6-2ubuntu1)   ...
+qemu-system-common (2.0.0+dfsg-2ubuntu1.15)   ...
+libfdt1:amd64 (1.4.0+dfsg-1)   ...
+msr-tools (1.3-2)   ...
+cpu-checker (0.7-0ubuntu4)   ...
+ipxe-qemu (1.0.0+git-20131111.c3d1e78-2ubuntu1.1)   ...
+libxenstore3.0 (4.4.1-0ubuntu0.14.04.6)   ...
+libxen-4.4 (4.4.1-0ubuntu0.14.04.6)   ...
+qemu-keymaps (2.0.0+dfsg-2ubuntu1.15)   ...
+seabios (1.7.4-4)   ...
+qemu-system-x86 (2.0.0+dfsg-2ubuntu1.15)   ...
+qemu-kvm start/running
+qemu-utils (2.0.0+dfsg-2ubuntu1.15)   ...
+sharutils (1:4.14-1ubuntu1)   ...
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ qemu-system-x86
+qemu-system-x86:    
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ lsls
+README.md  book  putty_log.txt
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ q
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ sudo apt=
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ sudo apt-get install qemu
+   ... 0%   ... 100%   ... 
+   ... 0%    ... 0%   ... 50%   ... 50%          
+   ... 0%   ... 0%   ... 
+       :
+  account-plugin-windows-live ant ant-optional antlr aspectj bnd bsh
+  checkstyle fop groovy ivy java-wrappers junit junit4 libaether-java
+  libantlr-java libaopalliance-java libapache-pom-java libasm3-java
+  libasm4-java libaspectj-java libasync-http-client-java
+  libatinject-jsr330-api-java libavalon-framework-java libbatik-java
+  libbcel-java libbcpg-java libbcprov-java libbindex-java libbsf-java
+  libbsh-java libcdi-api-java libcglib-java libclassworlds-java
+  libcodenarc-groovy-java libcommons-beanutils-java libcommons-cli-java
+  libcommons-codec-java libcommons-collections3-java
+  libcommons-configuration-java libcommons-dbcp-java libcommons-digester-java
+  libcommons-httpclient-java libcommons-io-java libcommons-jexl2-java
+  libcommons-jxpath-java libcommons-lang-java libcommons-logging-java
+  libcommons-net2-java libcommons-parent-java libcommons-pool-java
+  libcommons-vfs-java libconstantine-java libdom4j-java libdoxia-java
+  libeasymock-java libecj-java libfop-java libganymed-ssh2-java
+  libgeronimo-interceptor-3.0-spec-java libgeronimo-jpa-2.0-spec-java
+  libgeronimo-jta-1.1-spec-java libgeronimo-osgi-support-java
+  libgmetrics-groovy-java libgnuinet-java libgnujaf-java libgnumail-java
+  libgoogle-gson-java libgradle-core-java libgradle-plugins-java libguava-java
+  libguice-java libhamcrest-java libhawtjni-runtime-java libhttpclient-java
+  libhttpcore-java libitext1-java libjackrabbit-java libjaffl-java
+  libjansi-java libjansi-native-java libjarjar-java libjaxen-java
+  libjaxp1.3-java libjcifs-java libjcip-annotations-java libjcommander-java
+  libjdom1-java libjetty-extra libjetty-extra-java libjetty-java libjffi-java
+  libjffi-jni libjline-java libjna-java libjnr-posix-java libjnr-x86asm-java
+  libjsch-java libjsoup-java libjsr305-java libkryo-java liblog4j1.2-java
+  liblogback-java libmaven-ant-tasks-java libmaven-parent-java
+  libmaven-scm-java libmaven2-core-java libminlog-java libmockobjects-java
+  libmodello-java libmx4j-java libnative-platform-java libnative-platform-jni
+  libnekohtml-java libnetbeans-cvsclient-java libnetty-java libobjenesis-java
+  libosgi-compendium-java libosgi-core-java libosgi-foundation-ee-java
+  libplexus-ant-factory-java libplexus-archiver-java
+  libplexus-bsh-factory-java libplexus-build-api-java libplexus-cipher-java
+  libplexus-classworlds-java libplexus-classworlds2-java libplexus-cli-java
+  libplexus-container-default-java libplexus-containers-java
+  libplexus-containers1.5-java libplexus-i18n-java
+  libplexus-interactivity-api-java libplexus-interpolation-java
+  libplexus-io-java libplexus-sec-dispatcher-java libplexus-utils-java
+  libplexus-utils2-java libpolyglot-maven-java libqdox-java libreflectasm-java
+  libregexp-java librhino-java libsaxon-java libservlet2.5-java
+  libservlet3.0-java libsisu-guice-java libsisu-ioc-java libslf4j-java
+  libtomcat7-java libupstart1 libwagon-java libwagon2-java libxalan2-java
+  libxbean-java libxerces2-java libxml-commons-external-java
+  libxml-commons-resolver1.1-java libxmlgraphics-commons-java libxom-java
+  libxpp2-java libxpp3-java libxstream-java libyaml-snake-java maven rhino
+  testng
+Use 'apt-get autoremove' to remove them.
+    :
+  qemu-system qemu-system-arm qemu-system-mips qemu-system-misc
+  qemu-system-ppc qemu-system-sparc qemu-user
+ :
+  qemu-user-static samba vde2 openbios-ppc openhackware qemu-slof
+    :
+  qemu qemu-system qemu-system-arm qemu-system-mips qemu-system-misc
+  qemu-system-ppc qemu-system-sparc qemu-user
+0 , 8  , 0   217   .
+19.5 M   .
+   160 M     .
+ ? [Y/n] y
+0% []              :1 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-system-arm amd64 2.0.0+dfsg-2ubuntu1.15 [1,687 kB]
+              0% [1 qemu-system-arm 4,106 B/1,687 kB 0%]3% [1 qemu-system-arm 575 kB/1,687 kB 34%]                                          5% [1 qemu-system-arm 1,071 kB/1,687 kB 63%]                                            9% []              :2 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-system-mips amd64 2.0.0+dfsg-2ubuntu1.15 [2,728 kB]
+              9% [2 qemu-system-mips 5,554 B/2,728 kB 0%]                                           13% [2 qemu-system-mips 876 kB/2,728 kB 32%]                                            18% [2 qemu-system-mips 1,800 kB/2,728 kB 66%]                                              23% []               :3 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-system-ppc amd64 2.0.0+dfsg-2ubuntu1.15 [2,687 kB]
+               23% [3 qemu-system-ppc 2,659 B/2,687 kB 0%]                                           28% [3 qemu-system-ppc 1,112 kB/2,687 kB 41%]34% [3 qemu-system-ppc 2,212 kB/2,687 kB 82%]                                             36% []               :4 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-system-sparc amd64 2.0.0+dfsg-2ubuntu1.15 [1,597 kB]
+               36% [4 qemu-system-sparc 2,658 B/1,597 kB 0%]                                             43% [4 qemu-system-sparc 1,284 kB/1,597 kB 80%]                                               45% []               :5 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-system-misc amd64 2.0.0+dfsg-2ubuntu1.15 [5,495 kB]
+               45% [5 qemu-system-misc 5,535 B/5,495 kB 0%]                                            51% [5 qemu-system-misc 1,341 kB/5,495 kB 24%]                                              59% [5 qemu-system-misc 2,798 kB/5,495 kB 51%]                  1,906 kB/s 466% [5 qemu-system-misc 4,272 kB/5,495 kB 78%]                  1,906 kB/s 373% []                                                 1,906 kB/s 2                                                                               :6 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/main qemu-system amd64 2.0.0+dfsg-2ubuntu1.15 [6,122 B]
+73% [6 qemu-system 4,110 B/6,122 B 67%]                         1,906 kB/s 273% []                                                 1,906 kB/s 2                                                                               :7 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/universe qemu-user amd64 2.0.0+dfsg-2ubuntu1.15 [5,166 kB]
+73% [7 qemu-user 1,211 B/5,166 kB 0%]                           1,906 kB/s 276% [7 qemu-user 621 kB/5,166 kB 12%]                           1,906 kB/s 280% [7 qemu-user 1,438 kB/5,166 kB 28%]                         1,906 kB/s 285% [7 qemu-user 2,353 kB/5,166 kB 46%]                         1,906 kB/s 189% [7 qemu-user 3,182 kB/5,166 kB 62%]                         1,906 kB/s 195% [7 qemu-user 4,300 kB/5,166 kB 83%]                         1,906 kB/s 099% []                                                 1,906 kB/s 0                                                                               :8 http://kr.archive.ubuntu.com/ubuntu/ trusty-updates/universe qemu amd64 2.0.0+dfsg-2ubuntu1.15 [168 kB]
+99% [8 qemu 1,211 B/168 kB 1%]                                  1,906 kB/s 0100% []                                                1,906 kB/s 0                                                                                19.5 M,  10 (1,914 k/)
+Selecting previously unselected package qemu-system-arm.
+(  ...(  ...5%(  ...10%(  ...15%(  ...20%(  ...25%(  ...30%(  ...35%(  ...40%(  ...45%(  ...50%(  ...55%(  ...60%(  ...65%(  ...70%(  ...75%(  ...80%(  ...85%(  ...90%(  ...95%(  ...100%(  ... 217411    .)
+Preparing to unpack .../qemu-system-arm_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-system-arm (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package qemu-system-mips.
+Preparing to unpack .../qemu-system-mips_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-system-mips (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package qemu-system-ppc.
+Preparing to unpack .../qemu-system-ppc_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-system-ppc (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package qemu-system-sparc.
+Preparing to unpack .../qemu-system-sparc_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-system-sparc (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package qemu-system-misc.
+Preparing to unpack .../qemu-system-misc_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-system-misc (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package qemu-system.
+Preparing to unpack .../qemu-system_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-system (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package qemu-user.
+Preparing to unpack .../qemu-user_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu-user (2.0.0+dfsg-2ubuntu1.15) ...
+Selecting previously unselected package qemu.
+Preparing to unpack .../qemu_2.0.0+dfsg-2ubuntu1.15_amd64.deb ...
+Unpacking qemu (2.0.0+dfsg-2ubuntu1.15) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for doc-base (0.10.5) ...
+Processing 1 added doc-base file...
+qemu-system-arm (2.0.0+dfsg-2ubuntu1.15)   ...
+qemu-system-mips (2.0.0+dfsg-2ubuntu1.15)   ...
+qemu-system-ppc (2.0.0+dfsg-2ubuntu1.15)   ...
+qemu-system-sparc (2.0.0+dfsg-2ubuntu1.15)   ...
+qemu-system-misc (2.0.0+dfsg-2ubuntu1.15)   ...
+qemu-system (2.0.0+dfsg-2ubuntu1.15)   ...
+qemu-user (2.0.0+dfsg-2ubuntu1.15)   ...
+qemu (2.0.0+dfsg-2ubuntu1.15)   ...
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ qemu_system_x86-64
+qemu_system_x86-64:    
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ qemu-system-x86_64
+Could not initialize SDL(No available video device) - exiting
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ 
