@@ -341,4 +341,8 @@ boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ qemu_system_x86-64
 qemu_system_x86-64:    
 boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ qemu-system-x86_64
 Could not initialize SDL(No available video device) - exiting
-boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ 
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study$ 
+Broadcast message from root@boojongmin-ThinkPad-E550
+(unknown) at 0:45 ...
+
+The system is going down for power off NOW!
