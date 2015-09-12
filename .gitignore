@@ -83,3 +83,10 @@ project/plugins/project/
 .scala_dependencies
 .worksheet
 
+
+#python
+#django
+db.sqlite3
+__pycache__
+*.pyc
+
