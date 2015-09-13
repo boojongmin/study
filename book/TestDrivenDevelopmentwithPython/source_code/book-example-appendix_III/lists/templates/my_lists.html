@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block list_form %}{% endblock %}
+
+{% block header_text %}나의 목록{% endblock %}
+
+{% block extra_content %}
+
+    <h2>{{ owner.email }}의 목록</h2>
+    <ul>
+        {% for list in owner.list_set.all %}
+            <li><a href="{{ list.get_absolute_url }}">{{ list.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>다른 사용자와 공유된 목록</h2>
+    <ul>
+    {% for list in owner.shared_lists.all %}
+        <li>
+            <a href="{{ list.get_absolute_url }}">{{ list.name }}</a>
+            ({{ list.owner.email }})
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
+
