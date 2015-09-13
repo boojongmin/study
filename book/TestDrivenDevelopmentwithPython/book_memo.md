@@ -17,6 +17,17 @@ TDD는 훈련이다. 성과가 즉시 보여지는 것이 아니라 오랜 기�
 
 
 
+**상수는 테스트하지 마라** 
+
+** Refactoring **
+1. 테스트없이 리팩터링할 수 없다.
+
+** 리팩터링시에는 앱 코드와 테스트 코드를 한 번에 수정하는 것이 아니라 하나씩 수정해야 한다.** 
+[refactoring cat](https://www.youtube.com/watch?v=wmOofF7FnQA)
+
+
+
+
 command 
 pythone3 manage.py runserver
 python3 manage.py test
