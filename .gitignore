@@ -87,6 +87,7 @@ project/plugins/project/
 #python
 #django
 db.sqlite3
-__pycache__
+__pycache__/
+migrations/
 *.pyc
 

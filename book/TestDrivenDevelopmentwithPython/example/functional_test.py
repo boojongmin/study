@@ -11,6 +11,11 @@ class NewVisitorTest(unittest.TestCase):
   def tearDown(self):
     self.browser.quit()
 
+  def check_for_row_in_list_table(self, row_text):
+    table = self.browser.find_element_by_id('id_list_table')
+    rows = table.find_elements_by_tag_name('tr')
+    self.assertIn(row_text, [row.text for row in rows])
+
   def test_can_start_a_list_and_retrieve_it_later(self):
     self.browser.get('http://localhost:8000')
 
@@ -22,14 +27,41 @@ class NewVisitorTest(unittest.TestCase):
       inputbox.get_attribute('placeholder'),
       'insert work item'
     )
+    inputbox.send_keys('buy peacock feather')
     inputbox.send_keys(Keys.ENTER)
+
+
+
+    # import time
+    # time.sleep(10)
 
     table = self.browser.find_element_by_id('id_list_table')
     rows = table.find_elements_by_tag_name('tr')
-    self.assertTrue(
-      any(row.text == '1: buy bird' for row in rows),
-      "new work is not show on table"
-    )
+    #  1
+    # self.assertTrue(
+    #   any(row.text == '1: buy peacock feather' for row in rows),
+    #   "new work is not show on table"
+    # )
+
+    # 2    
+    # self.assertTrue(
+    #   any(row.text == '1: buy peacock feather' for row in rows),
+    #   "new work is not show on table -- text :\n%s" % (
+    #       table.text
+    #   )
+    # )
+
+    # 3
+    # self.assertIn('1: buy peacock feather', [row.text for row in rows])
+    self.check_for_row_in_list_table('1: buy peacock feather')
+
+
+    inputbox = self.browser.find_element_by_id('id_new_item')
+    inputbox.send_keys('make web by peacock feather')
+    inputbox.send_keys(Keys.ENTER)
+
+    self.check_for_row_in_list_table('1: buy peacock feather')
+    self.check_for_row_in_list_table('2: make web by peacock feather')
 
     self.fail('Finish the test!')
 
