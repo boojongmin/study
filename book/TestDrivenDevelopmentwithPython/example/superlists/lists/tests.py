@@ -26,8 +26,8 @@ class SmokeTest(TestCase):
         self.assertEqual(response.content.decode(), expected_html)
 
 
-    """
 
+    """
     def test_home_page_can_save_a_POST_request(self):
         request = HttpRequest()
         request.method = 'POST'
@@ -40,7 +40,8 @@ class SmokeTest(TestCase):
         self.assertEqual(new_item.text, 'new work item')
 
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response['location'], '/')
+        # self.assertEqual(response['location'], '/')
+
 
 
         # self.assertIn('new work item', response.content.decode())
@@ -62,6 +63,7 @@ class SmokeTest(TestCase):
         new_item = Item.objects.first()
         self.assertEqual(new_item.text, 'new work item')
 
+
     def test_home_page_redirects_after_POST(self):
         request = HttpRequest()
         request.method = 'POST'
@@ -70,17 +72,17 @@ class SmokeTest(TestCase):
         response = home_page(request)
 
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response['location'], '/')
+        self.assertEqual(response['location'], '/lists/the-only-list-in-the-world/')
 
-    def test_home_page_displays_all_list_items(self):
-        Item.objects.create(text='itemey 1')
-        Item.objects.create(text='itemey 2')
+    # def test_home_page_displays_all_list_items(self):
+    #     Item.objects.create(text='itemey 1')
+    #     Item.objects.create(text='itemey 2')
 
-        request = HttpRequest()
-        response = home_page(request)
+    #     request = HttpRequest()
+    #     response = home_page(request)
 
-        self.assertIn('itemey 1', response.content.decode())
-        self.assertIn('itemey 2', response.content.decode())
+    #     self.assertIn('itemey 1', response.content.decode())
+    #     self.assertIn('itemey 2', response.content.decode())
 
 
 from lists.models import Item
@@ -103,4 +105,19 @@ class ItemMOdelTest(TestCase):
         self.assertEqual(first_saved_item.text, 'first item')
         self.assertEqual(second_saved_item.text, 'second item')
 
+class ListViewTest(TestCase):
+
+    def test_uses_list_template(self):
+        response = self.client.get('/lists/the-only-list-in-the-world/')
+        self.assertTemplateUsed(response, 'list.html')
+
+    def test_home_page_displays_all_list_items(self):
+        Item.objects.create(text='itemey 1')
+        Item.objects.create(text='itemey 2')
+
+        response = self.client.get('/lists/the-only-list-in-the-world/')
+
+
+        self.assertIn('itemey 1', response.content.decode())
+        self.assertIn('itemey 2', response.content.decode())
 

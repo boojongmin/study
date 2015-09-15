@@ -16,6 +16,12 @@ TDD는 훈련이다. 성과가 즉시 보여지는 것이 아니라 오랜 기�
 1. 틀을 사용하는 것이 도움이 된다는 것이다. 쉬운 함수를 위한 테스트 틀이 있다면, 함수가 복잡해지더라도 심리적 부담을 줄일 수 있다. 테스트를 해야 할 정도로 복잡하다고 판단한 후 테스트를 작성하기 시작한다면, 틀이 없기 때문에 훨씬 많은 수고를 들여서 테스트를 만들고 수정해야한다.
 
 
+TDD는 Agile 개발 방법과 밀접한 관련이 있다. -> 동작하는 최소한의 애플리케이션을 빠르게 말들고, 이를 이용해서 얻은 실제 사용자 의견을 설계에 점진적으로 반영해 가능 방식
+
+** YAGNI!(You ain't gonna need it)** 
+
+
+
 
 **상수는 테스트하지 마라** 
 
@@ -53,8 +59,18 @@ Migration(마이그레이션) : 데이터베이스 구축을 담당
 테스트를 작성해서 실패하는지 보고(레드), 코드를 수정해서 테스트를 통과하도록 만든다(그린). 그리고 리팩터를 통해 코드를 개선한다.
 * Triangulation(삼각법) : 기존 코드에 구체적인 테스트 케이스를 추가해서 일반화(편법이 될 수도 있는)한 처리를 정당화하는 것.
 * Three strikes and refactor : 언제 중복 코드를 제거해야하는지 말해주는 일반적인 규칙. 세 번째 동일 코드가 나온다면, 어떤 코드가 공통적이며, 재사용 또는 리팩터링이 가능한지 확실할 수 있게 된다.
+* 작업 메모장 : 코딩을 하는 동안 우리가 해야 할 작업을 기록해두는 곳. 이렇게 기록해두면 현재 작업하고 있는 것이나 마저 못한 작업을 나중에라도 끝낼 수 있다.
    
-
+**python app test tip ** 
+mkdir functional_tests
+cd functional_tests
+touch __init__.py
+vi tests.py
+// test case 작성... //
+cd ..
+pytyon3 manage.py test functional_tests <- functional_tests folder의 테스트만 실행.
+pytyon3 manage.py test lists <- lists folder의 테스트만 실행.
+pytyon3 manage.py test <-모든 앱 폴더(functional_tests, lists)의 테스트도 같이 실행됨.
 
 
 command 
@@ -69,7 +85,8 @@ rm db.sqlite3
 python3 manage.py migrate --noinput
 
  ========
-
+** grep tip ** 
+grep -E "class|def" lists/tests.py
 
 
 
