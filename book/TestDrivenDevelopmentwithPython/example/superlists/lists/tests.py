@@ -52,28 +52,6 @@ class SmokeTest(TestCase):
         # self.assertEqual(response.content.decode(), expected_html)
      """
 
-    def test_home_page_can_save_a_POST_request(self):
-        request = HttpRequest()
-        request.method = 'POST'
-        request.POST['item_text'] = 'new work item'
-
-        response = home_page(request)
-
-        self.assertEqual(Item.objects.count(), 1)
-        new_item = Item.objects.first()
-        self.assertEqual(new_item.text, 'new work item')
-
-
-    def test_home_page_redirects_after_POST(self):
-        request = HttpRequest()
-        request.method = 'POST'
-        request.POST['item_text'] = 'new work item'
-
-        response = home_page(request)
-
-        self.assertEqual(response.status_code, 302)
-        self.assertEqual(response['location'], '/lists/the-only-list-in-the-world/')
-
     # def test_home_page_displays_all_list_items(self):
     #     Item.objects.create(text='itemey 1')
     #     Item.objects.create(text='itemey 2')
@@ -121,3 +99,33 @@ class ListViewTest(TestCase):
         self.assertIn('itemey 1', response.content.decode())
         self.assertIn('itemey 2', response.content.decode())
 
+class NewListViewTest(TestCase):
+
+    def test_saving_a_POST_request(self):
+        self.client.post(
+            '/lists/new',
+            {'item_text': 'new work item'},
+        )
+
+        self.assertEqual(Item.objects.count(), 1)
+        new_item = Item.objects.first()
+        self.assertEqual(new_item.text, 'new work item')
+        # request = HttpRequest()
+        # request.method = 'POST'
+        # request.POST['item_text'] = 'new work item'
+
+        # response = home_page(request)
+
+    def test_redirects_after_POST(self):
+        # request = HttpRequest()
+        # request.method = 'POST'
+        # request.POST['item_text'] = 'new work item'
+
+        # response = home_page(request)
+        response = self.client.post(
+            '/lists/new',
+            {'item_text': 'new work item'},   
+        )
+
+        # self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, '/lists/the-only-list-in-the-world/')
