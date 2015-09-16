@@ -65,6 +65,11 @@ Migration(마이그레이션) : 데이터베이스 구축을 담당
 '/new', '/new/'의 차이처럼 꼬리슬래시를 사용한 경우는 일반적인 URL, 없는 경우는 데이터베이스에 변경을 가하는 ACTION URL인 경우로 사용함
 
 
+** 알아두면 유용한 TDD 개념과 일반적인 법칙**
+- 테스트 격리(Test Isolation)와 전역 상태(Global State): 각각의 테스트가 다른 테스트에 영향을 끼쳐서는 안 된다. each test, initialize persistence
+- 동작 상태 확인 후 다음 동작 상태 확인(테스트고트 vs 리팩터링 캣): 일반적으로 모든 것을 한 번에 수정하는 것이 쉽다. 하지만 주의하지 않으면 결국 리팩터링 캣 처지가 되서 오히려 많은 코드를 재수정 하거나 아무것도 동작하지 않는 상태가 된다. 테스트 고트님은 우리가 한 단계씩 수정해서 동작하는지 확인 후에 다음 다녜로 넘어가도록 격려하고 있다.
+- YAGNI('You ain't gonna need it!') : 나중에 도움이 될 것이라는 생각에 코드를 작성하려고 하느 ㄴ유혹을 이겨내야 한다. 그것을 사용하지 않을 수도 있고, 무엇보다 이후에 발생한 요구사항 변경을 예측할 수 없기 때문이다. (극복방법은 책 18장에서 다룸)
+
 
    
 **python app test tip ** 
@@ -78,6 +83,8 @@ pytyon3 manage.py test functional_tests <- functional_tests folder의 테스트�
 pytyon3 manage.py test lists <- lists folder의 테스트만 실행.
 pytyon3 manage.py test <-모든 앱 폴더(functional_tests, lists)의 테스트도 같이 실행됨.
 
+** 참조URL **
+http://bootstrapk.com/
 
 command 
 python3 funcional_test.py   <- 기능테스트용
@@ -85,6 +92,7 @@ pythone3 manage.py runserver
 python3 manage.py test      <- 단위테스트용(lists/test.py 실행)
 python3 manage.py makemigrations <- migration for testunit's database
 python3 manage.py migrate
+python3 manage.py collectstatic <- settings.py의 STATIC_ROOT 작업후 실행.
 
 (db 초기화)
 rm db.sqlite3
