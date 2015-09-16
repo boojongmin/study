@@ -9,7 +9,8 @@ TDD 작업순서 (완료후 반복)
 1. 기 테스트를 재실행해서 통과하는지 또는 제대로 동작하는지 확인하낟. 이 과정에서 새로운 단위 테스트를 작성해야 할 수도 있다. 
 
 
-TDD는 훈련이다. 성과가 즉시 보여지는 것이 아니라 오랜 기간을 거쳐야 보이기 때문디ㅏ.
+TDD는 훈련이다. 성과가 즉시 보여지는 것이 아니
+1. 단위 테스트가 실패하고 나면 단위 테스트를라 오랜 기간을 거쳐야 보이기 때문디ㅏ.
 
 시시한 함수에 대한 시시한 테스트의 이점
 1. 테스트 자체가 시시하다면 테스트 작성에 시간이 오래 소요 되지 않는다 그냥하자.
@@ -119,8 +120,60 @@ python3 manage.py migrate
 
 ** virtualenv 생성 **
 elspeth@b32bef0e8269:~/nginx$ sudo pip3 install virtualenv
+elspeth@3111c33338ef:~/nginx$ virtualenv --python=python3 ./virtualenv
+elspeth@3111c33338ef:~/nginx$ source ./virtualenv/bin/activate
+(virtualenv)elspeth@3111c33338ef:~/nginx$ 
+(virtualenv)elspeth@3111c33338ef:~/nginx$ pip install django
+(virtualenv)elspeth@3111c33338ef:~/nginx$ pip freeze > ./superlists/requirements.txt
+(virtualenv)elspeth@3111c33338ef:~/nginx$ deactivate
+elspeth@3111c33338ef:~/nginx$ 
+
+** Nginx 설정 ** 
+
+boojongmin@boojongmin-ThinkPad-E550:/usr/local/nginx-1.9.3$ sudo ps -aux | grep nginx
+root      1161  0.0  0.0  28472   560 ?        Ss   21:25   0:00 nginx: master process /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+
+vi /usr/local/nginx/conf/nginx.conf
+
+// root html 주석처리한 부분으로 하려면 심볼릭 링크 생성
+boojongmin@boojongmin-ThinkPad-E550:/usr/local/nginx/html$ sudo ln -s /home/boojongmin/dev/ci/openshift/boojongmin/python/wsgi/static ./static
+//
+boojongmin@boojongmin-ThinkPad-E550:/usr/local/nginx/html$ sudo vi ../conf/nginx.conf
+
+ 	#	location /static/ {
+	 #        root html;
+	 #      }
+        
+        location /static {
+          alias /home/boojongmin/dev/ci/openshift/boojongmin/python/wsgi/static;
+        }
 
 
+        location / {
+            proxy_pass http://localhost:8000;
+        }
+
+boojongmin@boojongmin-ThinkPad-E550:/usr/local/nginx/html$ sudo service nginx reload
+
+
+** gunicorn 설치 ** 
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study/book/TestDrivenDevelopmentwithPython/example$ source ./virtualenv/bin/activate
+(virtualenv)boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study/book/TestDrivenDevelopmentwithPython/example$ pip install gunicorn
+(gunicorn은 application이라고 하는 함수를 가지고 있는 WSGI 서버 경로를 알고 있어야한다. Django는 superlists/wsgi.py 파일을 통해 이 함수를 제공한다.)
+(virtualenv)boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study/book/TestDrivenDevelopmentwithPython/example$ cd superlists/
+(virtualenv)boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study/book/TestDrivenDevelopmentwithPython/example/superlists$ gunicorn superlists.wsgi:application
+
+** gunicorn을 이용하여 unix socket 사용 ** 
+
+nginx.conf 수정
+
+	location / { 
+          proxy_set_header Host $host; 
+          proxy_pass http://unix:/tmp/superlists.socket; 
+        }
+
+(virtualenv)boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study/book/TestDrivenDevelopmentwithPython/example/superlists$ sudo service nginx reload
+(virtualenv)boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study/book/TestDrivenDevelopmentwithPython/example/superlists$ gunicorn --bind unix:/tmp/superlists.socket superlists.wsgi:application
 
 
 
