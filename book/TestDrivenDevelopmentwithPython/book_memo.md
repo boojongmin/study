@@ -70,6 +70,62 @@ Migration(마이그레이션) : 데이터베이스 구축을 담당
 - 동작 상태 확인 후 다음 동작 상태 확인(테스트고트 vs 리팩터링 캣): 일반적으로 모든 것을 한 번에 수정하는 것이 쉽다. 하지만 주의하지 않으면 결국 리팩터링 캣 처지가 되서 오히려 많은 코드를 재수정 하거나 아무것도 동작하지 않는 상태가 된다. 테스트 고트님은 우리가 한 단계씩 수정해서 동작하는지 확인 후에 다음 다녜로 넘어가도록 격려하고 있다.
 - YAGNI('You ain't gonna need it!') : 나중에 도움이 될 것이라는 생각에 코드를 작성하려고 하느 ㄴ유혹을 이겨내야 한다. 그것을 사용하지 않을 수도 있고, 무엇보다 이후에 발생한 요구사항 변경을 예측할 수 없기 때문이다. (극복방법은 책 18장에서 다룸)
 
+서버 구축 절차
+1. 도메인명 취득
+2. 수동으로 서버를 호스트 사이트로 프로비저닝하기
+   - 신규 서버를 프로비저닝해서 코드를 호스팅할 수 있도록한다.
+   - 신규 버전의 코드를 기존 서버에 배포한다.
+3. 사이트를 호스트할 곳 정하기
+4. 서버 구축하기
+5. 사용자 계정, SSH, 권한
+[docker]
+root@b32bef0e8269:/home# useradd -m -s /bin/bash elspeth
+root@b32bef0e8269:/home# usermod -a -G sudo elspeth
+root@b32bef0e8269:/# passwd
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfull
+root@b32bef0e8269:/# passwd elspeth
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@b32bef0e8269:/home# su - elspeth
+elspeth@b32bef0e8269:~$  
+ssh 생성 참조 링크
+https://www.linode.com/docs/networking/ssh/use-public-key-authentication-with-ssh/
+1. nginx 설치
+elspeth@b32bef0e8269:~$ sudo apt-get install nginx
+elspeth@b32bef0e8269:~$ sudo service nginx start
+elspeth@b32bef0e8269:~$ sudo service nginx status
+ * nginx is running
+elspeth@b32bef0e8269:~/nginx$ sudo apt-get install git
+elspeth@b32bef0e8269:~/nginx$ sudo apt-get install python3-setuptools
+elspeth@b32bef0e8269:~/nginx$ sudo easy_install3 pip
+elspeth@b32bef0e8269:~/nginx$ pip --version
+pip 7.1.2 from /usr/local/lib/python3.4/dist-packages/pip-7.1.2-py3.4.egg (python 3.4)
+elspeth@b32bef0e8269:~/nginx/superlists$ sudo apt-get install ufw
+elspeth@b32bef0e8269:~/nginx/superlists$ sudo ufw disable
+elspeth@b32bef0e8269:~/nginx/superlists$ sudo pip install selenium
+elspeth@b32bef0e8269:~/nginx/superlists$ sudo pip install django
+
+git에서 clone한후 ~/site하위에 django 폴더 복사
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+
+
+(사이트 폴더명은 domain을 이용하면 좋다.)
+~/site/www.boojongmin.com
+
+** virtualenv 생성 **
+elspeth@b32bef0e8269:~/nginx$ sudo pip3 install virtualenv
+
+
+
+
+
+[openshift]
+http://python-boojongmin.rhcloud.com/
 
    
 **python app test tip ** 

@@ -1,1 +1,1 @@
-python3 manage.py test functional_tests --liveserver=172.17.0.9
+python3 manage.py test functional_tests --liveserver=127.0.0.1:8000
