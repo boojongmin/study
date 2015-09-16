@@ -86,6 +86,14 @@ pytyon3 manage.py test <-모든 앱 폴더(functional_tests, lists)의 테스트
 ** 참조URL **
 http://bootstrapk.com/
 
+** 더 찾아봐야할 내용들 ** 
+- LESS를 이용한 부트스트랩 커스터마이징
+- DRY와 손위운 URL 코딩을 위한 {% static %} 템플릿 태그 : https://docs.djangoproject.com/en/1.8/howto/static-files/
+- bower 같은 클라이언트 측 패키징 툴
+
+** 디자인 및 레이아웃 테스트 **
+디자인과 레이아웃용 테스트는 작성할 필요가 없다. 이는 상수를 테스트하는것과 마찬가지다. 스모트테스트를 이용해서 CSS와 정적 파일이 동작하는지만 확인하는 것이 좋다.
+
 command 
 python3 funcional_test.py   <- 기능테스트용
 pythone3 manage.py runserver
