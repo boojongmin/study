@@ -175,12 +175,116 @@ nginx.conf 수정
 (virtualenv)boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study/book/TestDrivenDevelopmentwithPython/example/superlists$ sudo service nginx reload
 (virtualenv)boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study/book/TestDrivenDevelopmentwithPython/example/superlists$ gunicorn --bind unix:/tmp/superlists.socket superlists.wsgi:application
 
+** Debug를 False로 설정하고 ALLOWED_HOSTS 설정하기(운영서버에만 작업) ** 
+
+superlists/settings.py
+
+	DEBUG = False
+    TEMPLATE_DEBUG = False
+    ALLOWED_HOSTS = ['python-boojongmin.rhcloud.com']
+
+** Upstart를 이용한 부팅시 Gunicorn가동 **
+
+** Fabric python을 이용한 배포 자동화 **
+참고: http://www.fabfile.org/
+```python
+from fabric.contrib.files import append, exists, sed
+from fabric.api import env, local, run
+import random
+
+
+REPO_URL = 'https://github.com/hjwp/book-example.git'
+
+def deploy():
+    site_folder = '/home/%s/sites/%s' % (env.user, env.host)
+    source_folder = site_folder + '/source'
+    _create_directory_structure_if_necessary(site_folder)
+    _get_latest_source(source_folder)
+    _update_settings(source_folder, env.host)
+    _update_virtualenv(source_folder)
+    _update_static_files(source_folder)
+    _update_database(source_folder)
+
+
+def _create_directory_structure_if_necessary(site_folder):
+    for subfolder in ('database', 'static', 'virtualenv', 'source'):
+        run('mkdir -p %s/%s' % (site_folder, subfolder))
+
+def _get_latest_source(source_folder):
+    if exists(source_folder + '/.git'):
+        run('cd %s && git fetch' % (source_folder,))
+    else:
+        run('git clone %s %s' % (REPO_URL, source_folder))
+    current_commit = local("git log -n 1 --format=%H", capture=True)
+    run('cd %s && git reset --hard %s' % (source_folder, current_commit))
+
+def _update_settings(source_folder, site_name):
+    settings_path = source_folder + '/superlists/settings.py'
+    sed(settings_path, "DEBUG = True", "DEBUG = False")
+    sed(settings_path,
+        'ALLOWED_HOSTS =.+$',
+        'ALLOWED_HOSTS = ["%s"]' % (site_name,)
+    )
+    secret_key_file = source_folder + '/superlists/secret_key.py'
+    if not exists(secret_key_file):
+        chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+        key = ''.join(random.SystemRandom().choice(chars) for _ in range(50))
+        append(secret_key_file, "SECRET_KEY = '%s'" % (key,))
+    append(settings_path, '\nfrom .secret_key import SECRET_KEY')
+
+def _update_virtualenv(source_folder):
+    virtualenv_folder = source_folder + '/../virtualenv'
+    if not exists(virtualenv_folder + '/bin/pip'):
+        run('virtualenv --python=python3 %s' % (virtualenv_folder,))
+    run('%s/bin/pip install -r %s/requirements.txt' % (
+            virtualenv_folder, source_folder
+    ))
+
+
+def _update_static_files(source_folder):
+    run('cd %s && ../virtualenv/bin/python3 manage.py collectstatic --noinput' % (
+        source_folder,
+    ))
+
+
+def _update_database(source_folder):
+    run('cd %s && ../virtualenv/bin/python3 manage.py migrate --noinput' % (
+        source_folder,
+    ))
+
+```
+
+
+
+tip : fabric은 python2로 만들어졌다, 운영애 베포할 개발pc에 설치해야함.
+
+sudo apt-get install fabric
+cat /home/user/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
+
+(example file)fabfile.py
+```python
+from fabric.api import run
+
+def host_type():
+    run('uname -s')
+```
+(exampe run command)
+fab -H localhost,linuxbox host_type
+
+
+
+(fab run command)
+fab deploy:host=elspeth@172.17.0.1
+
 
 
 [openshift]
+http://rhcloud.com/
+https://www.openshift.com/
 http://python-boojongmin.rhcloud.com/
+ssh://55f90e4789f5cfb7a00000b0@python-boojongmin.rhcloud.com/~/git/python.git/
 
-   
+
 **python app test tip ** 
 mkdir functional_tests
 cd functional_tests
