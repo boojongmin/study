@@ -26,7 +26,6 @@ class SmokeTest(TestCase):
         self.assertEqual(response.content.decode(), expected_html)
 
 
-
     """
     def test_home_page_can_save_a_POST_request(self):
         request = HttpRequest()

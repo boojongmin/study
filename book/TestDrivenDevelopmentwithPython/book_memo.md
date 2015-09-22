@@ -308,6 +308,8 @@ http://bootstrapk.com/
 디자인과 레이아웃용 테스트는 작성할 필요가 없다. 이는 상수를 테스트하는것과 마찬가지다. 스모트테스트를 이용해서 CSS와 정적 파일이 동작하는지만 확인하는 것이 좋다.
 
 command 
+django-admin.py startproject superlists <- superlist project 생성
+python3 manage.py startapp lists
 python3 funcional_test.py   <- 기능테스트용
 pythone3 manage.py runserver
 python3 manage.py test      <- 단위테스트용(lists/test.py 실행)
