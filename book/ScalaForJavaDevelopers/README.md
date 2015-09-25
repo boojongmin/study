@@ -412,4 +412,435 @@ scala> val sumOfNumbers = numbers.sum
 sumOfNumbers: Int = 15
 
 
+#### 코드연동
+교재에서는 netbeans를 이용한다.
+GUI로 작업이 진행되기 때문에 컨셉만 정리한다.
+1. maven 설치
+2. derbyDB run (example schema있어야한다. 예제실행했을때는 APP)
+3. create maven project -> Webproject
+   -> WAS는 glassfish 선택(tomcat선택시 자동 생성되는 모듈에 library가 없음.)
+   -> run해봐서 웹페이지 나오는지 확인
+4. project 우클릭 -> new -> restful webservice from database
+   -> CUSTOMER TABLE 선택
+   -> webpage에서 customer테스트
+5. 교재 chapter02의 testclass 실행(java)
+   -> CustomerTest.java
+   -> mvn test
+6. chapter02의 scala test 실행
+   -> CustomerScalaTest.scala
+   -> chapter02 pom.xml 참조
+   -> mvn test
+
+
+### 스칼라와 자바 코드의 연동
+##### 컬렉션 타입 변환
+
+scala> import java.util.Arrays
+import java.util.Arrays
+
+scala> val javaList = Arrays.asList(1,2,3,4)
+javaList: java.util.List[Int] = [1, 2, 3, 4]
+
+scala> import scala.collection.JavaConverters._
+import scala.collection.JavaConverters._
+
+scala> val scalaList = javaList.asScala
+scalaList: scala.collection.mutable.Buffer[Int] = Buffer(1, 2, 3, 4)
+
+scala> val javaListAgain = scalaList.asJava
+javaListAgain: java.util.List[Int] = [1, 2, 3, 4]
+
+scala> assert(javaList eq javaListAgain)
+
+scala> assert(javaList eq scalaList)
+<console>:17: warning: java.util.List[Int] and scala.collection.mutable.Buffer[Int] are unrelated: they will most likely never compare equal
+       assert(javaList eq scalaList)
+                       ^
+java.lang.AssertionError: assertion failed
+  at scala.Predef$.assert(Predef.scala:151)
+  ... 33 elided
+
+
+##### 자바빈 스타일의 프로퍼티
+scala> class Company(var name:String)
+defined class Company
+
+scala> val sun = new Company("Sun Microsystems")
+sun: Company = Company@702ed190
+
+scala> sun.name
+res2: String = Sun Microsystems
+
+scala> sun.name_=("Oracle")
+
+scala> sun.name
+res4: String = Oracle
+
+scala> import scala.beans.BeanProperty
+import scala.beans.BeanProperty
+
+scala> class Company(@BeanProperty var name:String)
+defined class Company
+
+scala> val sun = new Company("Sun Microsystems")
+sun: Company = Company@1216eb3f
+
+scala> sun.getName()
+res7: String = Sun Microsystems
+
+scala> sun.setName("Oracle")
+
+##### 스칼라와 자바의 객체지향 지원 방식
+	기본생성자(primary constructor) 
+    클래스 선언시에 만드는 것으로 스칼라에서는 단 하나의 기본 생성자만 정의할 수 있다.
+    
+	보조 생성자(auxiliary constructor)
+    보조생성자는 반드시 this(...)로 기존 생성자를 호출해야 한다.
+    마지막에 기본 생성자(primary constructor)를 호출해 모든 파라미터를 초기화해야한다.
+
+scala> class Customer ( var customerId: Int, var zip: String) {
+     | def getCustomerId() = customerId
+     | def setCustomerId(cust: Int): Unit = {
+     |   customerId = cust
+     | }
+     | }
+defined class Customer
+
+scala> val customer = new Customer(1, "123 45")
+customer: Customer = Customer@3c9e19de
+
+scala> customer.
+asInstanceOf   customerId_=    isInstanceOf    toString   zip_=   
+customerId     getCustomerId   setCustomerId   zip                
+
+scala> customer.zip
+res10: String = 123 45
+
+scala> val otherCustomer = new Customer("543 21")
+<console>:18: error: not enough arguments for constructor Customer: (customerId: Int, zip: String)Customer.
+Unspecified value parameter zip.
+       val otherCustomer = new Customer("543 21")
+
+scala> class Customer ( var customerId: Int, var zip: String) {
+     | def this( zip: String) = this(0, zip)
+     | def getCustomerId() = customerId
+     | def setCustomerId(cust: Int): Unit = {
+     | customerId = cust
+     | }
+     | }
+defined class Customer
+
+scala> val otherCustomer = new Customer("543 21")
+otherCustomer: Customer = Customer@35536760
+
+##### 자바 인터페이스를 개선한 스칼라 트레잇
+	인터페이스 : 무엇을 하는지를 표현하는 부분(specification)과 이를 구체적으로 어떻게 동작하도록 구현하는 부분(implementation)을 분리해서, 실제 내부 구현 방식에 신경 쓸 필요 없이 간편하게 외부 시스템과 연동하게 해주는 메커니즘.
+    자바의 인터페이스는 메소드에 대한 구현 코드를 담을수 없어서, 추상적인 형태로만 정의
+    
+    스칼아의 트레잇은 일부 메소드에 대해서 구현 코드를 담을 수 있다.
+    java의 interface처럼 다중 상속(?) 가능
+    트레잇은 with 키워드를 사용하고 호출은 오른쪽에서 왼쪽으로 호출된다.
+    
+    
+    scala> class Customer ( var customerId: Int, var zip: String) {
+     | def this( zip: String) = this(0, zip)
+     | def getCustomerId() = customerId
+     | def setCustomerId(cust: Int): Unit = {
+     | customerId = cust
+     | }
+     | }
+defined class Customer
+
+scala> val otherCustomer = new Customer("543 21")
+otherCustomer: Customer = Customer@35536760
+
+scala> class Customer(val name:String, val discountCode: String="N"){
+     | def discounts(): List[Int] = List(5)
+     | override def toString() = "Applied discounts: " +
+     | discounts.mkString(" ", " %, ", "% ")
+     | }
+defined class Customer
+
+scala> trait VIPCustomer extends Customer {
+     | override def discounts = super.discounts ::: List(10)
+     | }
+defined trait VIPCustomer
+
+scala> trait GoldCustomer extends Customer {
+     | override def discounts = 
+     |   if (discountCode.equals("H"))
+     |   super.discounts ::: List(20)
+     |   else super.discounts ::: List(15)
+     | }
+defined trait GoldCustomer
+
+scala> object Main {
+     | def main(args: Array[String]) {
+     |   val myDiscounts = new Customer("Thomas", "H") with 
+     |     VIPCustomer with GoldCustomer
+     |   println(myDiscounts)
+     | }
+     | }
+defined object Main
+
+scala> Main.main(Array.empty)
+Applied discounts:  5 %, 10 %, 20% 
+
+##### 오브젝트 선언
+	java -> static 키워드로 singleton으로 생성
+    scala -> object 키워드를 class 키워드 앞에 넣으면 해당 클래스는 singleton으로 생성
+    
+    companion object - 싱글톤 오브젝트로서 클래스와 동일한 패키지와 파일에서 공존할 수 있다.(????)
+    
+##### 컴패니언 오브젝트
+	class명과 동일한 이름을 쓰는 object class
+    해당 class의 private도 접근 가능하다
+    
+scala> object Customer {
+     | def apply() = new Customer("default name")
+     | }
+defined object Customer
+
+scala> val thomas = Customer()
+thomas: Customer = Applied discounts:  5%
+
+
+##### 예외 처리
+
+scala> def parse(numberAsString: String) = 
+     | try {
+     | Integer.parseInt(numberAsString)
+     | } catch {
+     | case nfe: NumberFormatException =>
+     |   println("Wrong fromat for number " + numberAsString)
+     | case e: Exception => println("Error when parsing number" + numberAsString)
+     | }
+parse: (numberAsString: String)AnyVal
+
+scala> parse("hello")
+Wrong fromat for number hello
+res0: AnyVal = ()
+
+scala> parse("1.01")
+Wrong fromat for number 1.01
+res1: AnyVal = ()
+
+scala> def parse(numberAsString: String) =
+     | try {
+     |   Integer.parseInt(numberAsString)
+     | } catch {
+     |   case nfe: NumberFormatException => 
+     |     println("Wrong format for number "+ numberAsString)
+     |     -1
+     |   case _: Throwable =>
+     |     println("Error when parsing number " + numberAsString)
+     |     -1
+     | }
+parse: (numberAsString: String)Int
+
+scala> val number = parse("23ab")
+Wrong format for number 23ab
+number: Int = -1
+
+scala> case class Failure(val reason: String)
+defined class Failure
+
+scala> def parse(numberAsString: String) : Either[Failure, Int] = 
+     |   try {
+     |     val result = Integer.parseInt(numberAsString)
+     |     Right(result)
+     |   } catch {
+     |     case _ : Throwable => Left(Failure("Error when parsing number"))
+     |   }
+parse: (numberAsString: String)Either[Failure,Int]
+
+scala> val number = parse("12ab")
+number: Either[Failure,Int] = Left(Failure(Error when parsing number))
+
+scala> val number = parse("1234")
+number: Either[Failure,Int] = Right(1234)
+
+scala> parse("12") match { 
+     | case Right(x) => x
+     | case Left(x) => "hello" + x
+     | }
+res1: Any = 12
+
+##### 자바와 스칼라의 코딩 스타일 차이점
+	java : 명령형(imperative)을 주로 사용
+    scala : 함수형 언어에 뿌리를 두고 있기 때문에, 문장(statement) 대신 표현식(expression)으로 코드를 구성하는 선언적(declarative)인 방식을 주로 사용
+    
+    모든것을 표현식(특히 불변형 표현식)으로 작성하면 코드를 재활용하거나 결함(composition)하기가 훨씬 쉽다.
+    
+
+scala> val amountBought = 5000
+amountBought: Int = 5000
+
+scala> val customerLevel = if(amountBought > 3000) "Gold" else "Silver"
+customerLevel: String = Gold
+
+##### 코드 레이아웃 다듬기
+	한문장으로 표현하는 원라이너로 작성하는 경우가 많기 때문에 두개 공백 문자로 들여쓰기를 하는 것이 좋다.
+    http://docs.scala-lang.org/style/naming-conventions.html
+    
+##### 명명 규칙
+	camel case 사용, _가 익명함수나 self, this의 의미를 갖고 있기 때문에 first_name, _first_name처럼 변수 이름에 함부로 사용하면 안 된다.
+    상수는 MyConstant처럼 첫글자가 대문자로 시작하는 낙타 표기법을 사용.
+    함수명은 최대한 간결하게 표현
+    자바에서는 x같은 변수명을 권장하지 않지만, 스칼라에서는 람다 표현식을 더 짧게 표현할 수 있기 때문에 권장한다(원라이너 때문에). _로 표현함.
+	amount-> amt 처럼 축약형 추천
+    
+### 3. 스칼라 에코시스템
+##### ide
+http://scala-ide.org/
+
+##### sbt
+	DSL형태로 스칼라를 작성
+    ivy를 이용한 의존성 관리
+    메이븐 포멧의 저장소 사용
+    점진적으로 컴파일(incremental compilation)
+    REPL(??)
+    연속적으로 테스팅, 배치, 테스트 프레임워크와 연동
+
+http://www.scala-sbt.org/
+
+
+
+wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.9/sbt-0.13.9.zip -O sbt.zip
+
+	
+
+java -Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M -jar `dirname $0`/sbt-launch.jar "$@"
+
+$ chmod u+x ~/bin/sbt
+
+	sbt -> 초반에 다운로드 시간이 꽤 걸린다;;;
+
+boojongmin@boojongmin-ThinkPad-E550:~/dev/cm/github/study/book/ScalaForJavaDevelopers/example/SampleProject$ sbt
+[info] Set current project to sampleproject (in build file:/home/boojongmin/dev/cm/github/study/book/ScalaForJavaDevelopers/example/SampleProject/)
+> run
+[info] Compiling 1 Scala source to /home/boojongmin/dev/cm/github/study/book/ScalaForJavaDevelopers/example/SampleProject/target/scala-2.10/classes...
+[info] Running Hi 
+Hi!
+[success] Total time: 3 s, completed 2015. 9. 24 오후 1:21:16
+> exit
+
+vi build.sbt
+```sbt
+name := "SampleProject"
+
+version := "1.0"
+
+scalaVersion := "2.10.3"
+```
+
+sbt 파일에서 빈줄은 구분자(delimeter) 역할을 한다.
+
+##### 이클립스 플러그인 설치
+https://github.com/typesafehub/sbteclipse
+
+파일 생성 /project/plugins.sbt
+
+    addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")
+
+cd ..
+sbt eclipse
+
+(이클립스에서 import)
+
+###intelij
+https://github.com/mpeltonen/sbt-idea
+
+/project/plugins.sbt
+
+    addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
+    
+    저장소 추가 방법 예제
+    resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
+
+cd ..
+sbt gen-idea
+
+	IDEA 13부터 스칼라 플러그인에서 SBT를 기본으로 지원하므로 위 방식대로 하지 않아도 된다.
+
+##### netbeans (skip....)
+
+
+##### 서블릿 컨테이너에서 실행할 웹 애플리케이션 만들기(책대로느 안됨. 아래 링크 참조)
+
+http://earldouglas.com/projects/xsbt-web-plugin/2.0.html
+
+mkdir -p src/main/scala
+mkdir -p src/main/webapp/WEB-INF
+
+vi project/plugin.sbt
+
+    addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "2.0.4")
+
+vi build.sbt
+	name := "SampleProject"
+
+    organization := "com.samples"
+
+    version := "1.0"
+
+    scalaVersion := "2.10.3"
+
+    libraryDependencies += "org.eclipse.jetty" % "jetty-webapp" % "9.1.0.v20131115"
+
+    libraryDependencies += "org.eclipse.jetty" % "jetty-plus" % "9.1.0.v20131115"
+
+    libraryDependencies += "javax.servlet" % "servlet-api" % "2.5" % "provided"
+
+    libraryDependencies += "net.databinder.dispatch" %% "dispatch-core" % "0.11.0"
+    
+@@에러발생
+    
+    
+     [error] /home/boojongmin/dev/cm/github/study/book/ScalaForJavaDevelopers/example/SampleProject/src/main/scala/com/samples/SimpleServlet.scala:14: To compile XML syntax, the scala.xml package must be on the classpath.
+
+     Scala 2.11 이후에서 scala xml이 빠짐. 의존성 추가해줘야함.
+     libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.2"
      
+     
+     (책은 container:start로 되어있는데 안된다...;; 플러그인 사이트가서 메뉴얼 찾아보니 jetty:start로 실행하라고함)
+     > jetty:start
+    [info] waiting for server to shut down...
+    [info] starting server ...
+    2015-09-24 17:55:28.922:INFO::main: Logging initialized @138ms
+    2015-09-24 17:55:28.941:INFO:oejr.Runner:main: Runner
+    [success] Total time: 0 s, completed 2015. 9. 24 오후 5:55:29
+    2015-09-24 17:55:29.067:INFO:oejs.Server:main: jetty-9.2.1.v20140609
+    > 2015-09-24 17:55:30.826:WARN:oeja.AnnotationConfiguration:main: ServletContainerInitializers: detected. Class hierarchy: empty
+    2015-09-24 17:55:31.107:INFO:oejsh.ContextHandler:main: Started o.e.j.w.WebAppContext@2d6d8735{/,file:/home/boojongmin/dev/cm/github/study/book/ScalaForJavaDevelopers/example/SampleProject/target/webapp/,AVAILABLE}{file:/home/boojongmin/dev/cm/github/study/book/ScalaForJavaDevelopers/example/SampleProject/target/webapp/}
+    2015-09-24 17:55:31.108:WARN:oejsh.RequestLogHandler:main: !RequestLog
+    2015-09-24 17:55:31.134:INFO:oejs.ServerConnector:main: Started ServerConnector@128d6de6{HTTP/1.1}{0.0.0.0:8080}
+    2015-09-24 17:55:31.135:INFO:oejs.Server:main: Started @2380ms
+
+##### sbt-assembly로 하나의 .jar 파일로 만들기
+버전업되면서 책의 내용은 안됨.
+https://github.com/sbt/sbt-assembly 참조
+
+##### Scalariform으로 코드 포맷팅
+
+https://github.com/sbt/sbt-scalariform
+
+##### 스칼라 워크시트
+
+sbt의 :replay 명령처럼 REPL 프로젝트의 작업 내용도 저장하는 기능
+이클립스 New > Scala Worksheet >> experiment.sc 파일 생성
+
+##### HTTP 다루기
+HttpClient facade -> http://dispatch.databinder.net/Dispatch.html
+
+
+	sbteclipse에서 .class 파일을 생성시키지 않는것을 확인했다. 그래서 새로은 library 추가가 안되고 있다.
+	http://stackoverflow.com/questions/28900528/sbt-won%C2%B4t-update-classpath-in-a-play-scala-project
+    뭔가 버그가 있는것 같다. typesafe의 activator로 교체
+    
+    wget https://downloads.typesafe.com/typesafe-activator/1.3.6/typesafe-activator-1.3.6.zip?_ga=1.144562549.1754336652.1443143539 -O activator.zip
+	
+    으아아아;;; 안됨;;
+
+
+

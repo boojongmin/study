@@ -29,6 +29,8 @@ bin/
 bin-debug/
 
 .settings/
+.metadata/
+.idea/
 
 # sbt specific
 .cache
@@ -45,3 +47,6 @@ project/plugins/project/
 .scala_dependencies
 .worksheet
 
+/book/ScalaForJavaDevelopers/example/netbeans_workspace/Sample/nbproject/private/
+/book/ScalaForJavaDevelopers/example/netbeans_workspace/Sample/build/
+/book/ScalaForJavaDevelopers/example/netbeans_workspace/Sample/dist/
