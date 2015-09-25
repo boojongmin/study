@@ -1,3 +1,5 @@
+//dependencyOverrides += "org.scala-sbt" % "sbt" % "0.13.7"
+
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.4.0")
 
 addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "2.0.4")

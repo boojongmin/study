@@ -843,4 +843,117 @@ HttpClient facade -> http://dispatch.databinder.net/Dispatch.html
     으아아아;;; 안됨;;
 
 
+##### HTTP 다루기
+val request = url("http://freegeoip.net/xml/www.google.com")
+val result = Http(request OK as.String)
+val resultAsString = result() //result.apply()
+
+##### 스칼라의 for문
+for {
+  elem <- List(1, 2, 3, 4, 5)
+} yield "T" + elem
+
+for {
+  word <- List("Hello", "Scala")
+  char <- word
+} yield char.isLower
+
+for {
+  word <- List("Hello", "Scala")
+  char <- word if char.isUpper
+} yield char
+
+for {
+  word <- List("Hello", "Scala")
+  char <- word
+  lowerChar = char.toLower
+} yield lowerChar
+
+
+##### 타입세이프 액티베이터의 활용
+
+activator new
+[tab]
+play-java-spring
+javasample
+
+cd javasample
+./activator run
+
+./activator ui
+
+#### REPL을 스크립트 엔진으로 활용
+	http://docs.oracle.com/javase/6/docs/technotes/guides/scripting/
+
+
+### 4. 테스팅 도구
+(링크 참조)
+http://kukuruku.co/hub/scala/introduction-to-writing-tests-with-scalatest
+
+	TDD
+    BDD : https://cucumber.io/ BDD 스타일로 개발을 해야하는 언어.
+    
+    스칼라에서는 ScalaTest(http://scalatest.org/), 
+    Spec2(http://etorreborre.github.io/specs2/) 지원.
+    
+    
+libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
+	
+    error 발생 : can't expand macros compiled by previous versions of Scala
+    http://stackoverflow.com/questions/24103043/why-does-sbt-give-cant-expand-macros-compiled-by-previous-versions-of-scala-f
+    (해결)
+	//libraryDependencies += "org.scalatest" % "scalatest_2.10" % "3.0.0-M9"
+	libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
+
+
+(background demon 테스트 실행)
+> ~test-only scalatest.Test02     
+                                                                       
+	기존 junit으로 실행시키고 싶으면
+    import org.scalatest.FunSuite
+    import org.junit.runner.RunWith
+    import org.scalatest.junit.JUnitRunner
+
+    @RunWith(classOf[JUnitRunner])
+
+##### BDD 스타일 테스팅
+(참조)https://en.wikipedia.org/wiki/Behavior-driven_development
+
+
+	(문제발생)scala worksheet에서 org.scalatest._가 import되지 않음
+	http://stackoverflow.com/questions/26090385/intellij-idea-w-scala-plugin-not-finding-scala-concurrent
+    링크대로 캐시 삭제후 리스타트했으나 안됨
+    
+    build.sbt에 test 스코프로 설정되어있는 것을 확인함.
+    //libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
+    libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4"
+    
+    
+    
+##### 기능 테스트
+http://www.seleniumhq.org/
+
+	(추가)
+    libraryDependencies += "org.seleniumhq.selenium" % "selenium-java" % "2.47.1"
+    libraryDependencies += "org.seleniumhq.selenium" % "selenium-htmlunit-driver" % "2.47.1"
+
+
+##### ScalaMock으로 모킹하기
+
+(ScalaMock)
+libraryDependencies += "org.scalamock" % "scalamock-scalatest-support_2.11" % "3.2.2"
+(Spec2)
+libraryDependencies += "org.scalamock" % "scalamock-specs2-support_2.11" % "3.2.2"
+
+(참조)
+http://scalamock.org/user-guide/mocking_style/
+Expectations-First
+Record-then-Verify
+
+
+##### ScalaCheck를 이용한 테스팅
+Fuzz test
+https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%A7%95
+https://en.wikipedia.org/wiki/Fuzz_testing
+
 
