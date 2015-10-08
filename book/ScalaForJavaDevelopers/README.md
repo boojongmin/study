@@ -957,3 +957,159 @@ https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%A7%95
 https://en.wikipedia.org/wiki/Fuzz_testing
 
 
+### 플레이 프레임워크
+
+##### 클래식 버전으로 플레이 프레임워크 시작하기
+https://playframework.com/download
+-> 공식 사이트에서 activator로 진행하는 것으로 바뀜
+
+##### 탕비세이프 액티베이터 시작하기
+activator ui
+hello-play-scala 선택 - 설치 폴더 선택 - create
+cd hello-play-scala
+./activator run [port-number]
+
+(문제발생)
+https://github.com/typesafehub/activator/issues/1060
+->위의 내용대로 build.sbt 수정함
+
+
+
+### 6 데이터베이스 사용 방법과 ORM의 미래
+
+> sbt
+> set name :="sbtjpasample"
+> session save
+
+
+    (문법)???
+    override def save(customer: Customer): Unit = ???
+    http://stackoverflow.com/questions/31302524/what-does-the-triple-question-mark-mean-in-scala
+
+
+### 7. 웹서비스
+pass
+
+
+### 8. 비동기와 동시성
+SIP-14-Futures and Promises 참조
+(Future, Promises)
+https://en.wikipedia.org/wiki/Futures_and_promises
+
+    Future는 여러가지 연산을 효율적이며서 논블록킹 방식으로 동시에 실행시키기 위한 뛰어난 방법을 제공한다.
+
+##### Async 라이버르리: SIP-22-Async
+
+- async { <표현식> } : <표현식>에 해당하는 코드가 비동기로 실행된다.
+- await { <Future 오브젝트를 리턴하는 표현식> } : async 블록 안에서 사용되며, Future 인자가 완성될 때까지 외부의  async 블록의 실행을 멈춘다.
+
+def async[T](body: => T) : Future[T]
+def await[T](future:Future[T]):T
+
+(참조) https://github.com/scala/async
+
+
+##### 아카 살펴보기
+##### 액터 모델의 이해
+
+Actor 모텔을 칼휴이트와 피터 비숍, 리차드 스타이거가 1973년 IJCAI에 발표한 'A Universal Modular Actor Formalism for Artificaial Intelligence' 논문을 통해 처음 소개. 이 모델을 적용해 유명해진 언어가 Erlang
+
+	actor 모델의 특징
+    메소드 호출이 아닌 메시지 전달에 기반
+    액터라 부르는 연산의 단위를 통해 동작을 캡슐화하고, 다른 액터와 불변형 메시지를 비동기적으로 통신하는 방식으로 연산을 수행
+    사람의 커뮤니케이션을 본따서 만들었기 때문에 시스템의 동작을 직관적으로 볼 수 있는 장점이 있다.
+    스레드에 비해 간단하고, 상태를 공유하지 않기 때문에 분산 및 병렬 애플리케이션을 작성하기에 안성 맞춤이다.
+
+```scala
+class Greeter extends Actor {
+  var greeting = ""
+
+  def receive = {
+    case WhoToGreet(who) => greeting = s"hello, $who"
+    case Greet           => sender ! Greeting(greeting) // Send the current greeting back to the sender
+  }
+}
+```
+
+
+Actor
+  Actor trait을 상속, 추상 메소드 receive 구현해야함. partial 함수이기 때문에, 메시지의 모든 타입에 대해 처리하지 않아도 된다.
+  receive는 싱글 스레드로 처리.(이놈의 event-driven....)
+  actor의 상태를 추가할 수 있도록 gretting 변수를 가변형으로 선언.
+  !메소드는 tell이라고 부름.(actor ! message)
+  명시적인 선언 없이 sender라는 변수를 사용 함. 이는 메시지를 전달한 액터에게 응답을 하기 위함.
+  ActorRef 인자를 통해 Greet 메시지에 수신자의 주소를 담아 보내도 된다.
+  (ex) case Greet(someon) => someone ! Greeting(greeting)
+  
+```scala
+object HelloAkkaScala extends App {
+
+  // Create the 'helloakka' actor system
+  val system = ActorSystem("helloakka")
+
+  // Create the 'greeter' actor
+  val greeter = system.actorOf(Props[Greeter], "greeter")
+
+  // Create an "actor-in-a-box"
+  val inbox = Inbox.create(system)
+
+  // Tell the 'greeter' to change its 'greeting' message
+  greeter.tell(WhoToGreet("akka"), ActorRef.noSender)
+
+  // Ask the 'greeter for the latest 'greeting'
+  // Reply should go to the "actor-in-a-box"
+  inbox.send(greeter, Greet)
+
+  // Wait 5 seconds for the reply with the 'greeting' message
+  val Greeting(message1) = inbox.receive(5.seconds)
+  println(s"Greeting: $message1")
+
+  // Change the greeting and ask for it again
+  greeter.tell(WhoToGreet("typesafe"), ActorRef.noSender)
+  inbox.send(greeter, Greet)
+  val Greeting(message2) = inbox.receive(5.seconds)
+  println(s"Greeting: $message2")
+
+  val greetPrinter = system.actorOf(Props[GreetPrinter])
+  // after zero seconds, send a Greet message every second to the greeter with a sender of the greetPrinter
+  system.scheduler.schedule(0.seconds, 1.second, greeter, Greet)(system.dispatcher, greetPrinter)
+  
+}
+```
+  
+ 
+##### 동작변경
+booking 프로그램
+
+intellij run ->
+Application
+Main class : akka.Main
+VM options : -Dakka.loglevel=DEBUG -Dakka.actor.debug.receive=true
+Program arguments : se.sfjd.ch8.sample.BookingMain
+Working  directory : (선택)
+Use classpath of module : helloakka
+
+#### 메시지 처리에 실패했을 경우
+
+	한 오브젝트가 다른 오브젝트의 메소드를 호출하는 방식으로 동작하던 기존 아키텍처에서는 호출한 측의 예외가 전달된다.
+
+	액터 모델에서는 모든 메시지가 비동기적으로 처리되기 때문에, 응답을 받기 전까지 얼마나 걸릴리 알 수 없을 뿐만 아니라, 메시지를 보낸 뒤에느 ㄴ발생한 오류에 대한 어떠한 처리도 할 수 없어서 예외를 다루기가 훨씬 까다롭다.
+    
+    akka는 '죽게 내버려 두는' 방식을 따름.  -> 액터에 대한 모니터링 기능과 죽은 액터와 여기에 영향을 받는 액터 그룹을 재구동하는 기능을 제공.
+    부모 액터에서 자식 액터를 모니터링 할 수 있다.
+    
+##### 액터 시스템 테스트
+	병렬 시스템은 근본적으로 다음 동작을 예측할 수 없기(비결정적 nondeterministic) 때문에 싱글 스테드 아키텍처와는 달리 주의해야함.
+    
+helloakka -> test -> scalatest 참조
+
+
+##### 이장에서 다루지 못한 아카의 기능
+- DeathWatch API를 이용한 액터의 생명 주기 관리 기능
+- 시스템 실패 후 복구한 뒤에도 액터의 상태 유지하는 기능
+- 분산 환경에서 액터끼리 원격으로 통신하는 기능
+- 클러스터링을 통해 분산 환경에서 오류를 처리하는 기능. 타입세이프 액티베이터 템플릿인 akka-clustering을 통해 클러스터링 기능에 대한 예제 확인 가능
+
+http://akka.io/docs 참조
+
+    
