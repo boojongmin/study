@@ -177,4 +177,231 @@ A under B
 기존: B 아래 A
 실제: A (아래쪽에 있고, 위에서 덮고 있는) B
 
-2. 
+2. 전치사의 기본 개념 하나를 찾아내야한다.(동사+전치사를 숙어라고 외우는 것 또는 사전의 방대한 용례를 외우는 것이 아니라 전치사에 기본 개념(추상적인)을 체화하고 다양하게 적용해 나가야한다.)
+
+##### 영어 어순을 이해하지 못해 생긴 전치사의 왜곡
+(x) You first!
+(O) After you! 
+
+A -> after -> B
+(X) after : ~뒤에
+(O) after : (그건 나중이고) 먼저 일어난 일은~
+
+They played an interesting game after launch
+(x) : 그들은 점심 식사 후 재미난 게임을 했다.
+(o) : 그들 -> 놀았다 -> 흥미로운 -> 게임 -> (먼저일어난일은:after) -> 점심식사
+
+@원어민이라면 after를 듣는 순간 게임을 했는데 그 앞에 뭔가 있다라는 영상을 떠올린다. '다음에, 뒤에'라는 개념을 떠올리지 않는 것이다.
+
+##### 전치사의 개념, 관계지형도로 이해하기
+관계지형도(물리적 위치를 나타내는 그림)으로 전치사를 이미지로 저장하면 좋다.
+(그림을 그릴수 없다 ㅠㅠ)
+
+[전치사 이미지 참조_구글이미지](https://www.google.co.kr/search?newwindow=1&safe=off&site=&tbm=isch&source=hp&biw=1855&bih=985&q=at&oq=at&gs_l=img.3..0l10.2940.3055.0.3155.2.2.0.0.0.0.110.110.0j1.1.0....0...1ac.1.64.img..1.1.110.GwzVbSldwpk#newwindow=1&safe=off&tbm=isch&q=at+preposition&imgrc=y8l6adaGNOxSyM%3A)
+[전치사 참조](http://reallifeglobal.com/prepositions-made-easy-in-on-and-at/)
+[영어 공부 블로그](http://reallifeglobal.com/blog/)
+
+**in** 
+A가 안에 있고, 밖에서 둘러싸고 있는 것은 B
+
+**on** 
+A가 면을 접하고 있는데, 접하는 대상은 B
+
+on이 접촉의 의미이다 보니, 접촉한 대상이 움질일 경우는 함께 움직이게 된다. 그래서 현재의 느낌과 함께 계속이라는 의미도 가지게 된다.
+ex) The building is on fire.
+빌딩과 불이 접하고 있으니 불타는 중이란 뜻이 됨.
+in fire로 바꾸게 되면 화재가 빌딩을 삼킨 느낌, on fire -> in fire
+
+**at** 
+A가 접점하고 있는데, 접하는 대상은 B
+영화 ET에서 손가락이 접하는 장면을 at으로 떠올리면 된다.
+
+** of**
+A가 밀접한 관련을 맺고 있는데, 그 관련 대상은 B
+
+(hm.....)
+The love of parents is great
+사랑->(사랑과 관련있는건)->부모님들->있다->위대하다
+The spoon is made of gold
+스푼은 -> 있다 -> 만들어졌다 -> (스픈과 관련을 맺는데) -> 금
+
+** for**
+A에서 포물선이 날아가는데, 향하는 목표가 B
+He married her for love..
+그->아내로 취하다-> 그녀->(포물선이 향하는 목표는)-> 사랑
+I will wait here for five days.
+나->할것이다->기다리다->여기->(포물선이향하는 목표는)->5일
+
+for five days는 1일, 2일...5일째의 끝에 꽂히는 느낌이다.
+during은 기간만 표시할 뿐 포물선이 꽂힐 목표가 없으므로 일자가 명시된 기간 앞에 쓰이지는 않는다.
+
+** to**
+A가 일정 방향으로 죽 이어지고, 도달하는 지점은 B (➔)
+The tree fell to the ground
+그 나무->쓰러졌다->(죽 이어져 도달하는 지점음➔)-> 땅
+
+** from**
+A가 어디로부터 왔는데, 출발점은 B
+Don't take it away from me.
+하지않다 -> 가져가다->그것->떨어져->(출발점)->나
+
+** by**
+A가 어떤 영향력 하에 있는데, 영향력의 원천은 B
+The building was built by Someone.
+그 건물->였다->지어지다->(영향력의 원천은)->삼성
+
+** around** 
+A가 빙 둘러싸고 있고, 그 안쪽에 있는 것은 B
+Tom runs around the park every morning.
+
+** with**
+A가 있고, 함께하는 것은 B
+Gone with the wind.
+갔다 -> (함께하는 것은) -> B
+
+** off** 
+A가 떨어져 있는데, 그 기준 대상은 B
+The shot was off target.
+총알->였다->(떨어져 있는 기준 대상은)->타깃
+
+** against**
+A가 맞부딪치는데, 맞서는 대상은 B
+Korea's soccer team plays against Hong Kong.
+한국 축국팀 ->시합하다->(맞서는 힘을 느끼고 그 힘의 원천을 따라가 보니)->홍콩
+
+** into**
+A가 안쪽으로 죽 들어가고, 들어가는 영역은 B
+He went into the office.
+
+** over**
+A가 위에서 덮고 있고, 아래쪽에 있는 것은 B
+Marry puts her hands over her face
+
+** under**
+A가 아래쪽에 있고, 위에서 덮고 있는 것이 B
+I am under an umbrella.
+
+** after** 
+A는 뒤이고, 앞에 있는 것은 B
+A dog ran after a fleeing thief.
+She's leaving the day after tomorrow.
+
+** before**
+A는 앞이고, 뒤에 있는 것은 B
+I was called before the teacher.
+I love you before myself.
+
+** between**
+A가 중간에 있고, 양편에 B와 C
+The train runs between Seoul and Busan.
+
+** through**
+A가 통과하는데, 관통한 대상은 B
+A car passed through a tunnel.
+A car passed through a tonnel.
+'통과'라는 의미가 추상적으로 발전하여 어떤 생각을 꿰뚫어보거나 간파한다는 표현을 쓸때도 자주 쓰인다.
+She saw through the trick
+
+He got through the entrance examination.
+
+##### 사진기사를 이용한 전치사 익히기
+(pass)
+
+### Chapter 4 영어의 비밀 병기 벼리기 ➁
+##### 조동사는 자동차의 기어!
+영어라는 자동차는 auto가 아니고 manual이란 점이다. 조동사는 주어가 이루려고 하는 어떤 동작을 수행하는 데 얼마나 신경을 써서 하는가, 또는 얼마나 확실하게 실행하는가를 정하는 사전 작업이다.
+->운전할 때 출발하하기 전에 기어를 먼저 넣듯이, 영어의 조동사는 본 동작인 동사 앞에 필요한 사전 작업이다.
+
+조동사가 문장의 기어가 되기 위해 가지고 있는 요소는 크게 
+1. 외부에서 강제되는 힘.
+2. 실현 가능성
+3. 의무
+
+
+<표>조동사에 내포된 의미 **외부의 힘,실현가능성,의무**의 높낮이
+
+높음|||||||||낮음
+--|--
+must|ought to|should|shall|will|would|can|could|may|might
+
+It is raining in New York. -> 100%
+It must be raining. -> 95%
+It ought to be raining. -> 90%
+It should be raining. -> 85%
+It shal be raining. -> 80%
+It will be raining. -> 75%
+It would be raining. -> 65%
+It could be raining. -> 45%
+It may be raining. -> 35%
+It might be raining. -> 25%
+(%는 샘플... 뉘앙스를 익히자.)
+
+##### 조동사의 기본 개념 그리기
+기본 개념을 숙지하고 경사진 미끄럼틀 위에서 무언가 일고 있다는 그림을 그리고 지나가면, 뒤에 이어지는 말을 통해 내용이 구체화 된다.
+
+
+##### 조동사의 기본 개념
+
+must
+
+    ╲ (동사➔)
+     ╲
+      ╲
+       ╲
+
+ought to
+
+	❩ (동사➔)
+      ❩
+        ❩
+          ❩
+
+should
+
+	┒(동사➔)
+     ┒
+      ┒
+
+shall
+
+	(동사➔)
+	━━━━━
+
+
+will
+
+	━━━━━
+
+would
+
+	━ ━ ━
+
+can
+
+    ╲ 
+     ╲
+      ╲
+       ╲	
+       
+could
+
+	❩ 
+      ❩
+        ❩
+          ❩
+
+may
+
+	.
+     .
+      .
+       .
+
+might
+
+	.
+     ━
+       .
+        ━
+
+### chapter 5 문장의 핵, 동사의 기본 그림을 찾아라!
