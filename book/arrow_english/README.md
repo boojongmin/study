@@ -418,3 +418,298 @@ Welcome to Seoul!
 (o) 잘왔다 -> (죽이어서 도달한 지검이:to) -> 서울
 - 동사가 지닌 '힘의 방향'을 이해하라.
 동사란 움직임을 나타낸다. 움직임에는 '종류'와 '방향'이란 요소가 포함되기 마련이다. 주어로부터 어떤 방향으로 작용하여 목적어에 힘을 미치는가를 파악하면 된다. 
+
+##### 자/타동사의 혼동으로 초래되는 치명적 오류
+######자동사 정리(한국어로 해석을하면 타동사로 느껴지지만 자동사로 보이는 것들)
+- look
+기본 의미: 시선을 주다(두다)
+look at me
+시선을 주다->(접점하고 있는 대상은)->나
+  => see (막연히)보다
+- listen
+기본 의미: 귀를 기울이다(집중을해서 듣는다)
+ => hear 단순히 귀에 들어오는 소리를 청각을 통해 느낀다
+- graduate
+기본 의미: 어디에서 어디로 변화하다
+- insist
+기본의미: ~에 서 있다
+I insist on his presence.
+I insist on this part.
+I insist on her innocence.
+- refer
+기본 의미: 참고하기 위해서 가다
+
+######타동사 정리
+- concern
+기본 의미: 연결시키다(A에서 연결시키거나 묶는 힘이 나오는데 그 대상이 B가 된다.)
+This problem concerns us all.
+- discuss
+기본 의미: 잘게 나누다
+We discuss the problem together.
+- marry
+기본 의미: 주어와 함께 굳게 묶다.
+Tom marries Mary.
+A Company marries B company.
+- survive
+기본 의미: 살아남아서 지나치다(뛰어넘다, 지나쳐가다)
+My grandmother suvived my grandfather by 10 years.
+나의 할머니 -> 더 사셔서 지나쳐 가다 -> 나의 할아버지 -> 10년
+- thank
+기본 의미: 감사를 위해 높인다(떠받는다)
+Thank you!
+감사를 위해 높인다 -> 당신
+- accompany
+기본 의미: 옆에서 따르다
+I accompnay my friend to the door
+- interview
+기본 의미: 의견을 묻기 위하여 만나다(또는 방문하다)
+I interviewed the candidate
+
+##### 동사의 수 많은 뜻들, 다 외우지 않아도 된다.
+support
+주어에서 뭔가 떠 받치는 힘이 나와 뒤의 목적어에 영향을 미친다 -> 위로 떠받치다.
+
+
+- (위로 떠받치다) +  몸 -> 지탱하다
+- (위로 떠받치다) + 기력 -> 지속하다 
+- (위로 떠받치다) + 선수들 -> 응원하다
+- (위로 떠받치다) + 고통 -> 견디다
+- (위로 떠받치다) + 가족 -> 부양하다
+- (위로 떠받치다) + 시설 -> 재정적으로 지원하다
+- (위로 떠받치다) + 정책 -> 지지하다/옹호하다
+- (위로 떠받치다) + 주연 -> 조연하다
+- (위로 떠받치다) + 노래 -> 반주하다
+
+##### 동사를 묶어라
+사물이 행하는 대표적인 물리적 동작을 나타내는 대표동사, 그리고 그 대표 동작과 동일한 힘의 방향을 지닌 기본동사, 이 기본동사로부터 그 하위로 파생되어 나간 일반동사라는 식으로 동사들을 일종의 트리구조로 계열화(그룹핑)하는 것
+
+대표동사 - 특정동사
+
+get (얻다, 갖다 입수하다 - 주어가 직접 다가가서 대상을 취하는 형태, have는 단순히 가지고 있는 형태)
+- gain 자신에게 필요한 것을 노력하여 get
+- acquire 시간을 들여 get
+- obtain 몹시 원하는 것을 노력하여 get
+- buy 값을 치르고 get
+- learn 지식을 머리에 get
+- gather 여러 곳에서 한 곳으로 get
+- want 마음속으로 get 
+ - wish 실현 가능성에 관계없이 want
+ - hope 실현 가능하다고 믿고  want
+ - expect 확신을 가지고 want
+ - anticipate 기쁜 마음으로 want
+ - need 불충분하여 want
+
+##### 동사와 전치사의 어울림
+단순히 동사의 의미만 외울 것이 아니라 동사가 지닌 힘의 종류와 방향을 파악해야한다. 그러면 동사 뒤에 나올 전치사도 자연스럽게 결정된다.
+Draw water from a well.
+Ripe apples fell off the tree.
+A lion came out of the zoo.
+This highway goes to Busan.
+
+'동사 + 전치사'를 이용해 표현하기
+어려운 단어를 사용하기보다 기본동사와 전치사를 이용해 표현하는 것이 숙어다.
+repect 대신 사용.
+look up to : 시선을 주다 + 위로 -> 존경하다
+People look up to him as their leader.
+look down to: 시선을 주다 + 아래로 -> 깔보다.
+Marry loks after her children at home
+His car ran over a dog.
+그의 -> 자동차 -> 달리다 -> 위에서 덮다 -> 하나 -> 개
+##### 나만의 동사사전 만들기
+- 1단계: 자동사/타동사의 구분(둘다 쓰이는 경우는 개별적으로 각각 매 단계를 걸친다.)
+- 2단계: 기본 의미 찾기
+- 3단계: 기본 힘의 종류에 가미된 그 동사만의 둠직임 찾기
+- 4단계: 기본 의미의 다양한 활용을 테스트하기
+- 5단계: 사전이 필요 없어지는 단계
+
+### Chapter 6 거침없는 말 늘리기
+##### 영어 문장, 5형식이 아니라 3형식이다!
+1. 주어 + 주어의 존재 + 그 존재의 표출 모습(주어 -> be동사->명사/형용사)
+2. 주어 +동작(주어 -> 동사)
+3. 주어 + 힘의 작용 + 힘이 미치는 대상(주어 -> 동사 -> 목적어)
+
+문장과 문장 연결 방법
+
+1. S->V->O (S 또는 O에 붙어서 문장을 확장함.)
+ - <관계사> + S + V or V + O
+ - <동사 + ing/동사+ed/to+동사원형> + O
+ - <전치사> + O
+2. 
+
+ S->V->O||S->V->O
+-|-|-
+ | <접속사>| 
+ | <동사+ing> | 
+ | <동사+ed> | 
+ | <to+동사원형> | 
+ | <전치사> | 
+ 
+ ##### 관계사를 이용한 말 늘리기
+➀Tom likes me.
+➁I love Marry.
+➂Marry likes milk
+위의 ➀➁➂➂을 합치면
+Tom likes me - I love Marry - Marry likes milk
+주어가 I가 되어야하므로 기본문을 중심으로 전개
+I[Tom likes me] love Marry [Marry likes milk].
+me나 Marry가 반복되기 때문에 중복과 편한말로 대체한게 관계사(여기서는 사람이기 때문에 whom, who)
+I whom Tom likes love Marry who likes milk.
+
+관계사는 중복되는 요소를 중복해서 사용하지 않고 편하게 다른 말로 대체한 것일 뿐이다. 중복을 피하고 공통 부분을 찾아 결합시키는 데 사용
+문장에서 명사의 역할은 주어, 목적어, 전치사의 목적어, 보어밖에 없다. 명사에 연결된 관계사 역시 위의 4가지 역할을 맡을 수 밖에 없다. 관계사의 역할은 관계사 뒤에 오는 문장을 보면 알 수 있다.
+
+관계사 뒤에 바로 동사가 오면 그 관계사는 주어의 역할을 한다.
+관계사 뒤에 다른 명사가 오면 이 명사는 새롭게 주어가 시작되는 것이고 이 관계사는 '앞에 가져다 놓은 목적어'의 역할으 ㄹ한다.
+관계가사 이끄는 곁가지 문장의 형태는 
+명사+관계사+[➀동사+목적어(보어) / ➁주어+동사]
+ 
+Saturday is the day when he is less busy.
+토요일 -> 이다->(그날)->그->이다->덜->바쁘다
+
+This is (the way) how she solved the problem.
+이것->이다->(방법)->그녀->풀었다->그 문제
+(the way는 생략이 될 수 있다.)
+
+I saw a girl whose father is a famous actor
+나는->보았다->한 소녀->(소녀의)->아버지->이다->한->유명한->배우
+
+I will send what was promised.
+나->것이다->보내다->(그것)->였다->약속되다
+
+I'll do whatever you tell me to do.
+나->것이다->하다->뭇슨일이나->당신->말하다->나->도달지점은->하다
+
+##### 접속사를 이용한 말 늘리기
+and: 그리고
+or: 또는
+but: A에서 제외된 것은 B
+All are wrong but I.
+모두->이다->틀리다->(제외되는 것은)->나
+
+while: 동시에 일어난 일은
+I fell asleep while I was reading.
+
+after: A after B : 먼저 일어난 일은 A, 그 뒤에 B~
+before: A before B : 나중에 일어난 일은 A, 그 전에 B~
+I shall arrive after you leave
+나->반드시 하다->도착하다->(먼저 일어난 일은)->너->떠나다
+Before he comes here, I must take a train for Seoul.
+(나중에 일어난 일은)->그->오다->여기->나->해야만한다->잡다->한->기차->(포물선이 향하는 목표는)->서울
+
+as: 같은 것은(동일한 상황은)
+He came back as I was speaking.
+그->왔다->되돌아->(같은 것은)->나->였다->말하고 있다
+
+though: 상충되는 두 가지 것
+tought/even though/although
+Though he is poor, he is happy.
+(상충되는 두 가지는)->그->이다->가난한->그->이다->행복한
+
+if: 가정된 것은
+1)가정법 현재(if+과거, 주어+would+현재): 가정법이란 현재에서 실제로 일어난 사실이 아니므로 현재의 시제를 사용할 수 없다. if 다음에 과거시제가 오고, 다음에 따르는 결과의 내용도 조동사의 과거형을 사용한다.
+If I were young, I would study hard again.
+(가정한 내용은)->나->였다->젊다->나->할 것이다->공부->열심히->다시
+2)가정법 과거(if+had pp, 주어+would+have+pp):과거의 시점에서 가정한 일은 실제 과거에 일어난 일이므로 과거 이전인 '대과거'를 빌려서 사용하고 뒤의 would도 과거를 사용한다.
+If a typhoon had not come at that time, we would not have had it repaired.
+가정한 내용은->한 태풍->가졌다->오지 않았다->(접하는 지점은)->그때->우리->틀림없이 않았을 것이다->가졌다->이것->수선되다.
+
+unless: 예외가 있다면
+We can not understand disease unless we understand the person who has the disease.
+우리->할 수 없다->이해->병->예외가있다면->우리->이해하다->그 사람->그 사람->가지다->그 병
+
+than: 주어가 더욱 어떠하다. 그리고 비교의 대상은 무엇이다
+There is none other commandment greater than these.
+여기->있다->없는 존재->다른 율법->크다+더->(비교 대상은)->이것들
+
+lest: A 염려되는 바는 B이다
+I was afraid lest she should fail.
+나는->했다->걱정->염려되는 바이다->그녀->당연히 그러할 것이다->실패하다
+
+until: (지속하고 있다가)그 끝에 일어나는 일은~
+Go straight on until you come to the post office.
+가다->직진->(접하고 있는 면은:동작으로 보면 계속 붙어있는 느낌)->지속하고 있다가 그 끝에 일어나는 일은->너->오다(도착하다)->죽 이어져 도달한 지점은->그 우체국
+
+#####분사와 부정사로 말 늘리기
+영어의 간소화 법칙: 관계사나 접속사를 연결고리로 하여 말 늘리기를 할 경우에는 '주어+동사+목적어'의 완전한 기본문의 형태가 뒤따르기도 하지만, 관계사 또는 접속사, 주어, 조동사를 생략해서 표현하기도 한다. 생략해도 의미의 변화가 없거나, 가장 중요한 본론에 해당하는 단어를 주어와 가까이 놓음으로써 이해의 속도를 높일 수 있다면 과감이 생략해버리는 것.
+He was happy because he had a good wife.
+-> He was happy had a good wife.
+
+'어느 시점에서 동작의 상태가 어떠한가'
+동사의 어떤 시점에서 순간적으로 바라보면 그 시점에서 동작의 가능한 모습은 단 3가지 밖에 없다.
+➀동작이 진행되고 있는 경우 : 동사+ing
+➁동작이 이미 완료된 경우 : 동사+ed(과거분사형)
+➂앞으로 동작을하려는 하는 경우 : to+동사원형
+
+명사 다음이나, 기본문에 이어서 '동사+ing','동사+ed', 'to+동사원형'의 형태가 나오면 본동사가 아니고 옆으로 새는 곁그림을 하나 그리는 것으로 이해하면 거진 맞다.
+
+###### 동사+ing
+한순간에 포착된 동작. 움직이고 있는 것을 카메라로 찍어서 나온 사진 느낌?
+He is kind
+그->이다->친절한
+He is being kind.
+그->이다->~하고있다->친절
+=> 일시적으로 친절
+
+It showed a big tiger eating a rabbit.
+Walking along the streat, she met an old friend.
+
+###### 동사+ed
+동작이 이미 완료되었음.
+She could not walk because she was wounded in the legs
+-> She could not walk being wounded in the leg
+-> She could not walk wounded in the legs.
+
+동사+ed는 시제에 대한 개념이 없다 단지 동작이 이미 완료되었음을 나타낸다.
+
+주어가 스스로 취한것이라면 곁그림으로 빠지지 않는다.
+다만, 주어가 다른 대상으로부터 힘을 받은 경우라면 그 힘이 종료되었다고 하더라도 그 힘의 결과가 주어에게 남게 된다.
+being wounded하게 되면 그 동자깅 끝난 후에도 주어에게는 그 힘의 결과가 남게 되어, 상처를 입은 채로 있게 된다.
+따라서 곁그림에서 과거분사가 나오는 경우는 수동적 상황일 것이므로, 영어의 간소화의 법칙에 따라 being마저 생략.
+
+I received a letter written in English
+
+Born in better times, he would have been a great doctor
+
+###### to+동사원형
+➀앞으로 동작을 하려는 경우
+➁앞으로 일어날일
+문장에서 흐름을 읽고 둘 중 하나의 뜻으로 적용시킨다.
+-> to+동사원형을 보면 '간격'을 인식하자
+앞으로 일어날 가능성이 있는 일
+We must have a house which we can live in.
+우리->해야만 한다->가지다->한 집-> 그 집-> 우리->가능하다->살다
+->We must have a house can live in
+->We must have a house to live in.
+
+He has no friend who will help him.
+-> He has no friend to help him.
+그->가지다->없다->친구->(앞으로 일어날 일은)->도와주다->그
+
+Tom left early to be on time.
+탐->떠났다->일찍->(앞으로 일어날 일은)->이다->접접->시간
+
+###### 사역/지각/감각동사+동사원형
+사역/지각/감각동사 뒤에서 to가 생략된다고 배웠는데, 
+이는 주어와 동사 사이에 간격이 있을 수가 없기 때문에 to가 생략된다.
+I see her go out. -> 외출하는것을 보는것이기 때문에 외출과 보는 것은 '동시에' 이루어짐
+I felt the house shake -> 집이 흔들림과 '동시에' 떨어짐
+
+###### 전치사구로 말 늘리기
+접속사와 전치사는 둘 다 연결고리로서의 역할을 한다. 다른 점은 접속사 뒤에는 문장이 연결되고 전치사 뒤에는 명사가 연결.
+접속사 대신 전치사를 쓰고 문장을 압축하여 명사화 할 수도 있다.
+
+➀원인을 나타내는 가장 직접적인 전치사는 for이다. for가 누구 탓인지를 나타낼 때도 그 대상을 가리키는 포물선의 이미지로 기억된다는 점을 앞에서 배운 바 있다.
+➁원인과 결과는 항상 함께한다. 따라서 "함께하자는 것은~"의 뜻을 가진 with가 사용될 수 있다.
+➂원인은 결과에 대해 배경과 같은 역할을 할 수도 있다.그래서 "안에 있고, 밖에서 둘러싸고 있는" in도 가능하다
+➃원인과 결과는 딱 붙어서 다닌다. 그러서 at도 가능하다.
+➄또한 무엇으로부터 비롯되었는지 그 원인을 출처와 같이 생각해보면 out of도 가능하다
+➅원인이 짓누르는 느낌이 있다면 위에서 덮고 있는 under도 가능하다.
+
+He was absent because he was sick.
+-> He was absent for his sickness.
+
+He bought a car because it was necessary.
+->He bought a car out of necessity
+
+He collapsed because he was strained.
+->He collapsed under the strain.
