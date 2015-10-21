@@ -580,29 +580,178 @@ public, default, protected, private의 메소드 가시성 역시 프로그래�
  - 객체를 사용하는데 들어가는 비용: 노출 인터페이스가 적은 경우 사용하는 측에서 필요 이상으로 많은 작업을 해야한다.
 가시성 결정 전략
  -공용: 패키지 외부에서도 이 메소드가 유용하다. 이 가시성을 사용하는 프로그래머는 이 코드 관리를 책임지겠다는 의미이기도 하다. 메소드를 수정할 경우 모든 수정을 본인이 담당하거나, 최소한 사용자들에게 수정 사항을 알려줄 책임이 있다.
- - 패키지: 같은 패키지의 다른 객체에는 유용하지만 패키지 외부의 객체에는 공개하지 않겠음을 의미. 
+ - 패키지: 같은 패키지의 다른 객체에는 유용하지만 패키지 외부의 객체에는 공개하지 않겠음을 의미.
+먼저 가장 제한적인 가시성을 선택할 후, 필요에 따라 조금씩 가시성을 높여라.
+메소드를 final로 선언하는 것은 메소드를 변경하는 것이 복잡하고 미묘한 결과를 유발한다는 것을 의미시킴 하지만 오버라이드하면 더 쉽게 될 것이 더 복잡하게 처리 되는 경우가 있어 켄트벡은 사용하지 않는다고 한다.용용하는 것이 보통이며, 코드가 복잡할수록 효과가 크다.
 - 메소드 객체: 복잡한 메소드는 새로운 객체로 바꾼다.
+메소드 객체 패턴은 복잡하게 꼬여있는 메소드를 읽기 쉽고 명확하면서도 세부 구현 전달이 쉽도록 바꿔준다. 이 패턴은 동작하는 코드가 나온 후에 사용
+[참고](http://refactoring.com/catalog/replaceMethodWithMethodObject.html)
+ 메소드 객체를 생성하는 순서
+ 1. 메소드의 이름을 따서 이름을 정한다.(ex: complexCalculation()->ComplectCalculator)
+ 2. 메소드에서 사용하는 각 파라미터, 지역 변수, 필드에 대해 새로운 객체상의 필드를 생성한다. 일단 기존에 사용한 이름과 같은 이름을 사용한다.(이름은 나중에 변경 가능)
+ 3. 본래 메소드의 파라미터와 메소드에서 사용하는 필드를 파라미터로 취하는 생성자를 만든다.
+ 4. 본래 메소드를 새로운 클래서의 calculate()라는 메소드로 복사한다. 기존 메소드에서 파라미터, 지역 변수, 필드로 사용된 값들은 이제 모두 새로운 객체의 필드가 되었다.
+ 5. 기존 메소드의 본문을 새로운 객체의 인스턴스를 생성한 후 calculate()를 호출하는 코드로 바꾼다. 예를 들면 다음과 같다.
+
+    ```java
+		complexCalculation() {
+        	new ComplexCalculator().calculate();
+        }
+    ```
+ 6. 본래 메소드에서 필드를 설정하는 부분이 있었다면, 다음과 같이 calculate()가 반환된 후에 설정해준다.
+
+	```java
+    	complexCalculation() {
+        	ComplexCalculator calculator= new ComplexCalculator();
+            calculator.calculate();
+            mean= calculator.mean;
+            variance= calculator.variance;
+        }
+    ```
 - 오바리이드 메소드: 특화를 나타내기 위해 오버라이드를 사용한다.
+상위 클래스의 다른 메소드를 super.method() 호출하는 경우 혼란을 치를수 있으니 가급적 상위클래스의 메소드는 같은 이름의 메서드로 한정한다.
 - 오버로드 메소드: 같은 연산에 대해 다른 인터페이스를 제공한다.
+- [helper method](http://forums.devshed.com/java-help-9/helper-method-350163.html)
+"이 메소드를 사용할 수 있는 다양한 포맷이 존재한다."
+메소드 오버로드는 파라미터 타입만 다를 뿐, 같은 연산을 수행해야한다.
 - 메소드 반환 타입: 반환 타입에는 가급적 가장 일반적인 타입을 사용한다.
 - 메소드 주석: 코드 자체에서 쉽게 얻을 수 없는 정보는 주석을 통해 나타낸다.
 - 도우미 메소드: 주요 연산을 좀더 명확하게 표현하기 위해서 작은 전용 메소드를 사용한다.
+[helper method](http://forums.devshed.com/java-help-9/helper-method-350163.html)
+당장 관련된 세부 구현을 숨기고 메소드 이름을 통해 프로그래머의 의도를 나타냄으로써, 복잡하고 거대한 연산 코드를 좀더 읽기 좋게 하기 위해 사용.
+도우미 메서드는 보통 private로 선언, 상속해서 하위 클래스가 사용할 경우만 protected
 - 디버그 출력 메소드: toString()을 사용해서 유용한 디버그 과련 정보를 출력한다.
 - 변환: 객체 형변환은 명확하게 표현한다.
+변환의 빈도가 높은지, 클래스간의 의존성 증가되는지 확인후 변환 패턴을 사용.
+● 구현방법
+ - 기존 정보를 복사해서 새로운 타입의 실제 객체 생성
+ - 두 객체간의 공통 인터페이스를 찾아서 인터페이스를 통해 코드를 작성
 - 변환 메소드: 단순하고 제한적인 변환에 대해서는 원본 객체에서 변환된 객체를 반환하는 메소드를 제공한다.
+유사한 타입의 객체 간 변환을 표현하려 하고 필요한 변환의 수에 제한이 있다면, 기존 객체에 메소드를 추가해서 변환을 나태낼 수 있다.
+	```java
+    class Polar {
+    	Cartesian asCartesian(){
+        	...
+        }
+    }
+    ```
+대개의 경우 변환 메소드보다 변환 생성자를 선호(클라이언트 코드에서 원본 객체를 다룰 수 있게 처리)
 - 변환 생성자: 대부분의 변환에 대해서는 원본 객체를 인자로 취하는 변환될 객체의 생성자를 제공한다.
+String에 변환 메서드를 넣는다면 asFile, asUrl...... String 클래스는 너덜너덜해질 것이다.
+File(String name), Url(String spec)처럼 클라이언트에서 생성자를 통해 객체 생성.
 - 생성: 객체 생성을 명확히 표현한다.
 - 완결 생성자: 완결된 형태를 갖는 객체를 반환하는 생성자를 작성한다.
+생성 조건이 많다면 여러개의 생성자를 작성하고, 모든 생성자는 하나의 생성자를 사용해서 초기화한다.
 - 공장 메소드: 좀더 복잡한 객체를 생성할 때, 생성자 대신 정적 메소드를 사용한다.
-- 내보 공장: 좀더 많은 설명이 필요하거나 이후 개선이 필요한 객체 생성의 경우 도우미 메소드로 캡슐화한다.
-- 컬렉션 접근자 메소드: 컬렉션에 제한적인 접근만을 허용하는 메소드를 제공한다.
+ex: Rectangle.create(0, 0, 50, 200);
+객체 생성외에 다른 의도가 있는 경우만 사용.
+장점: 추상타입 반환 가능(hm... 결국엔 구현체일텐데...), 의도가 담긴 별도의 이름을 가질 수 있음.
+단점: 복잡성이 증가.
+- 내부 공장: 좀더 많은 설명이 필요하거나 이후 개선이 필요한 객체 생성의 경우 도우미 메소드로 캡슐화한다.
+객체 생성시 생성 과정이 너무 복잡한 경우 새로운 객체를 생성하고 반환하는 메소드를 만든다.
+보통 lazy initialize때 사용
+
+	```java
+    getX(){
+    	if(x==null)
+        	x= computeX(); <=요놈
+        return x;
+    }
+```
+- 컬렉션 접근자 메소드: 컬렉션에 제한적인 접근만을 허용하는 메소드를 제공한다.(수정에 대해서는 차단)
+
+컬렉션 프로토콜을 중복해서 구현하고 있다면, 설계상의 문제가 있을 확률이 높다. 객체에서 클라이언트가 필요로하는 적합한 작업을 제공한다면, 내부 데이터 접근을 많이 허용해야 할 필요 가 없다.
+	```java
+    List<Book> getBooks() {
+    	return books;
+    }
+```
+위와 같이 컬렉션을 직접 전달하면 사용자가 컬렉션을 조작할 수 있으므로 혼선 초래 할 수 있다.
+```java
+    List<Book> getBooks() {
+    	return Collections.unmodifiableLsit(books);
+    }
+```
+위와 같이 수정 불가능한 컬렉션으로 바꿀 수 있지만, 클라이언트측 디버깅에 어려움이 생긴다.
+컬렉션 조작은 의미있는 한도에서 최소한으로만 제공한다.
+```java
+    void addBook(Book arrival) {
+    	books.add(arrival);
+    }
+    int bookcount() {
+    	return books.size();
+    }
+```
+Iterator를 제공할 수 있지만 remove가 위험하다.
+    ```java
+    Iterator<Book> getBooks() {
+    	final Iterator<Book> reader= books.iterator();
+        return new Iterator<Book>() {
+        	public boolean hasNext() {
+            	return reader.hasNext();
+            }
+            
+            public Book next() {
+            	return reader.next();
+            }
+            
+            public void remove() {
+            	throw new UnsupportedOperationException(); //runtime exception이기 때문에 위험하고 디버깅이 어렵다.
+            }
+        }
+    }
+```
 - 불린 설정 메소드: 커뮤니케이션에 도움이 된다면, 불린 값을 설정하는 두 개의 메소드(상태별로 하나씩)를 제공한다.
-- 쿼리 메소드: isXXX라는 이름으로 된 메소드를 사용해서 불린 값을 반환한다.
+	```java
+    void valid() {...}
+    void invalid(){...}
+    //state를 넣어야하는 경우는 아래와 같이 처리
+    void setValid(boolean newState) {
+    	if(boolean expression) 
+        	cache.valid();
+        else
+			cache.invalid();
+    }
+```
+- 쿼리(질의) 메소드: isXXX라는 이름으로 된 메소드를 사용해서 불린 값을 반환한다.
+때론 객체는 다른 객체의 상태에 따라 결정을 내려야 한다. (보통 객체는 스스로 결정을 내리게 되므로 이는 이상적인 상황이 아니다.) 하지만 객체가 프로토콜을 통해 다른 객체의 결정을 동와야 할 경우에는 'be'동사나 'have'동사를 사용하라.
+-> 보통 의존적인 로직이 많다면 이는 로직에 문제가 있다고 볼 수도 있다. 의존적인 내용이 많다면 의족을 하고 있는 객체에 해당 로직을 옮겨라.
 - 동등성 메소드: equals()와 hashCode()를 함께 정의한다.
-- 취득 메소드: 때로 필드 값을 반환하는 메소드를 사용해서 필드에 대한 접근을 제공한다.
-- 설정 메소드: 드물게, 메소드를 사용해서 필드 값을 설정한다.(드문가? -_-?)
-- 안정한 복사: 접근자 메소드를 통해 전달하거나 전달되는 인스턴스를 복사해서 앨리어스(alias) 문제를 회피한다.
-- 
+동등성 비교는 equals(Object other)와 같이 다른 클래스와 quals를 할 수 있다. 이에 대비해서 잘못된 타입인경우 ClassCastException, 또는 IllegalArgumentException을 던져야한다.
+serialNumber와 같은 유니크한 값을 가져야하는 객체인경우는 hashCode에 사용될 수 있다.
+동일성에 대한 심플한 해법은 imumtable한 객체가 동등하다면 언제나 동등하다는 정책을 취한다.
+	```java
+    static Instrument create(String serialNumber) {
+    	if (cache.containsKey(serialNumber)) 
+        	return cache.get(serialNumber);
+        Instrument result= new Instrument(serialNumber);
+        return result;
+    }
+```
+- 취득 메소드: 때로 필드 값을 반환하는 메소드를 사용해서 필드에 대한 접근을 제공한다.(getter)
+- 설정 메소드: 드물게, 메소드를 사용해서 필드 값을 설정한다.(드문가? -_-?) (setter인것 같은데 좀더 여러가지 의미로)
+설정 메소드는 의존성 문제가 발생되기 때문에 가급정 외부에서 사용을 피해야한다.
+메소드 목적에 따라 인터페이스 이름을 정하면 코드 읽기가 쉬워진다.
+paragraph.setJustification(Paragraph.CENTERED);
+-> paragraph.centered();
+
+특정 객체 전용인 경우는 주석이라도 표시해서 독자를 배려하자. 의도를 잘 드러낼 수 있는 체계적인 인터페이스를 제공하는 것이 좋다.
+- 안전한 복사: 접근자 메소드를 통해 전달하거나 전달되는 인스턴스를 복사해서 앨리어스(alias) 문제를 회피한다.
+취득 메소드나 설정 메소드를 사용하면 앨리어스 문제가 발생할 수 있다.(2개의 객체가 다른 객체에 대해 배타적인 접근권이 있다고 가정하는 것)
+앨리어스 문제는 더 심각한 설계상의 문제(예를 들어 어떤 객체가 어떤 데이터에 대한 책임이 있는지 명확치 않은 문제)가 있다는 신호지만, 어떤 경우에는 객체를 반환하거나 저장하기전에 복사본을 만드는 방식으로 이런 문제를 피할 수 있다.
+
+    ```java
+	List<Book> getBooks() {
+    	list<Book> result= new ArrayList<Book>();
+        result.addAll(books);
+        return result;
+    }
+    void setBooks(List<Book> newBooks) {
+    	books= new ArrayList<Book>();
+        books.addAll(newBooks);
+    }
+    ```
+위를 안전한 복사라고 부른다. 하지만 성능저하가 따른다. 이는 외부 접근에서 코드를 보호하는 일시적인 해결책일 뿐다ㅏ. 가급적 어떤 구현의 핵심 기법으로 사용하는 것은 피하는 것이 낫다. immutable object와 composed method를 통해 더욱 간결하고 커뮤니케이션에 도움이 되면서 문제를 적게 발생시키는 인터페이스를 만들 수 있다.
 
 
 
