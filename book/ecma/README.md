@@ -843,12 +843,16 @@ It is the sixth edition of the ECMAScript Language Specification. Since publicat
 그것 이다 6번째 수정판 관련있는 것은ECMAScript 언어  상세. 이후 출판 관련있는 것은 첫번째 수정본 둘러싼 것은 1997, ECMAScript 가지다 성장 가리키는 것은 되다 하나 관련있는 것은 세계의 대부분 넓게 사용되는 일반적 용도 프로그램 언어. 그것 이다 최고 알려진 같은 언어 포함된 둘러싼것은 웹브라우저들 그러나 가지다 또한 되었다 광범위하게 적용되다 목표는 서버 또는 임베디드 어플리케이션. 6번째 수정판 이다 가장 대규모의 업데이트 가리키는 것은 ECMAScript 이후 배포 관련있는 것은 첫번째 수정본 둘러싼 것은 1997
 
 Goals for ECMAScript 2015 include providing better support for large applications, library creation, and for use of ECMAScript as a compilation target for other languages. Some of its major enhancements include modules, class declarations, lexical block scoping, iterators and generators, promises for asynchronous programming, destructuring patterns, and proper tail calls.
+
 목표들 목표는 ECMAScript 2015 포함하다 제공하는 더 지원한다 목표는 거대한 어플리케이션들, 라이브러리 생성, 그리고 향하는 목표는 사용하다 관련있는 것은 ECMAScript 같다 편집 목표 향하는 목표는 다른 언어들. 가끔 관련있는 것은 그것의 주 증대 포함하다 모듈, 클래스 정의, lexical block scoping, 반복자 그리고 generators, promises 향하는 목표는 비동기 프로그래밍, 파괴하다 패턴들, 그리고 적절한 tail calls. 
 
 The ECMAScript library of built-ins has been expanded to support additional data abstractions including maps, sets, and arrays of binary numeric values as well as additional support for Unicode supplemental characters in strings and regular expressions. 
-ECMAScript 라이브러리 관련있는것은 내장되어진것들 가졌다 확장된 향하는 방향은 지원하다 추가 데이터 추상화들 포함하고있다 maps, sets, 그리고 arrays 관련있는 것은 이진 숫자 값들 같은 잘 추가 지원 향하는 목표는 Unicode 추가 문자들 포함되는 문자열들 그리고 정규표현식.  
+
+ECMAScript 라이브러리 관련있는것은 내장되어진것들 가졌다 확장된 향하는 방향은 지원하다 추가 데이터 추상화들 포함하고있다 maps, sets, 그리고 arrays 관련있는 것은 이진 숫자 값들 같은 잘 추가 지원 향하는 목표는 Unicode 추가 문자들 포함되는 문자열들 그리고 정규표현식.
 The built-ins are now extensible via subclassing.
+
 내장된 장치들 이다 지금 확장될수있다 경유하다 subclassing
+
 ECMAScript is based on several originating technologies, the most well-known being JavaScript (Netscape) and JScript (Microsoft). The language was invented by Brendan Eich at Netscape and first appeared in that company’s Navigator 2.0 browser. It has appeared in all subsequent browsers from Netscape and in all browsers from Microsoft starting with Internet Explorer 3.0.
 
 The development of the ECMAScript Language Specification started in November 1996. The first edition of this Ecma Standard was adopted by the Ecma General Assembly of June 1997.
